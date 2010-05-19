@@ -29,6 +29,7 @@
 - (void)textViewDidChange:(UITextView *)textView;
 - (void)requestSucceeded:(NSString *)i;
 - (void)requestFailed:(NSString *)i withError:(NSError *) error;
+- (void)clearHowToAuthorize:(NSTimer *)timer;
 
 @end
 

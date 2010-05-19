@@ -14,3 +14,4 @@
 "untitled" = "名称未設定";
 "post_error_title" = "エラー";
 "post_error_msg" = "Postに失敗しました";
+"how_to_reauthorize" = "^ タップでクリア,\n ダブルタップで再認証";

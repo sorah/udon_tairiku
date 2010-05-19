@@ -14,3 +14,4 @@
 "untitled" = "Untitled";
 "post_error_title" = "Error";
 "post_error_msg" = "Failed to post.\nPlease try again later.";
+"how_to_reauthorize" = "^ Once tap to clear,\nDouble tap to reauthorize.";

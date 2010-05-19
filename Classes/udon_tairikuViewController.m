@@ -41,7 +41,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
-	
+
 	if (d == nil) 	d = [NSUserDefaults standardUserDefaults];
 	if (([[d stringForKey:@"oauth_key"] isEqualToString:@""] ||
 		 [[d stringForKey:@"oauth_secret"] isEqualToString:@""]) &&
@@ -49,7 +49,6 @@
 		setup_done = YES;
 		[self showSetupView];
 	} else {
-
 		OAConsumer *c = [((udon_tairikuAppDelegate *)[[UIApplication sharedApplication] delegate]).oaConsumer retain];
 		if (oa_access_token == nil) {
 			oa_access_token = [[OAToken alloc] initWithKey:[d objectForKey:@"oauth_key"]
@@ -63,8 +62,25 @@
 			[c release];
 		}
 		NSLog(@"%@", [twit description]);
-		[tv becomeFirstResponder];
+		if (animated) {
+			tv.editable = NO;
+			tv.text = NSLocalizedString(@"how_to_reauthorize",@"");
+
+			[NSTimer scheduledTimerWithTimeInterval:2.5
+											target:self
+										   selector:@selector(clearHowToAuthorize:)
+										   userInfo:nil
+											repeats:NO];
+		} else {
+			[tv becomeFirstResponder];
+		}
 	}
+}
+
+- (void)clearHowToAuthorize:(NSTimer *)timer {
+	tv.text = @"";
+	tv.editable = YES;
+	[tv becomeFirstResponder];
 }
 
 
