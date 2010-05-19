@@ -9,7 +9,7 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
-	<string></string>
+	<string>udon.png</string>
 	<key>CFBundleIdentifier</key>
 	<string>net.soralabo.udon_tairiku</string>
 	<key>CFBundleInfoDictionaryVersion</key>

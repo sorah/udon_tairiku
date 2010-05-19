@@ -17,6 +17,7 @@
 		E7435B7911A3682C00BF719F /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7435B7811A3682C00BF719F /* MainWindow.xib */; };
 		E7435B7B11A3682C00BF719F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7435B7A11A3682C00BF719F /* Localizable.strings */; };
 		E7435B8311A368C300BF719F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7435B8211A368C300BF719F /* InfoPlist.strings */; };
+		E7435BE311A3765800BF719F /* udon.png in Resources */ = {isa = PBXBuildFile; fileRef = E7435BE211A3765800BF719F /* udon.png */; };
 		E7A4AFE011A0AE87005A14BF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7A4AFD211A0AE87005A14BF /* Security.framework */; };
 		E7FDB463119FB4A7009F23F0 /* NSMutableURLRequest+Parameters.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FDB435119FB4A5009F23F0 /* NSMutableURLRequest+Parameters.m */; };
 		E7FDB464119FB4A7009F23F0 /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FDB437119FB4A5009F23F0 /* NSString+URLEncoding.m */; };
@@ -77,6 +78,7 @@
 		E7435B7F11A3685500BF719F /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E7435B8011A368A400BF719F /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E7435B8411A368C700BF719F /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E7435BE211A3765800BF719F /* udon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = udon.png; sourceTree = "<group>"; };
 		E7A4AFAF11A0A4AD005A14BF /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E7A4AFD211A0AE87005A14BF /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		E7FDB434119FB4A4009F23F0 /* NSMutableURLRequest+Parameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+Parameters.h"; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E7435BE211A3765800BF719F /* udon.png */,
 				E7435B7411A3681800BF719F /* udon_tairikuViewController.xib */,
 				E7435B7611A3682B00BF719F /* SetupViewController.xib */,
 				E7435B7811A3682C00BF719F /* MainWindow.xib */,
@@ -423,6 +426,7 @@
 				E7435B7711A3682B00BF719F /* SetupViewController.xib in Resources */,
 				E7435B7B11A3682C00BF719F /* Localizable.strings in Resources */,
 				E7435B8311A368C300BF719F /* InfoPlist.strings in Resources */,
+				E7435BE311A3765800BF719F /* udon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
