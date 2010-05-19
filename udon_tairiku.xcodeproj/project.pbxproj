@@ -12,15 +12,15 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		28D7ACF80DDB3853001CB0EB /* udon_tairikuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* udon_tairikuViewController.m */; };
-		E7435B7511A3681800BF719F /* udon_tairikuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7435B7411A3681800BF719F /* udon_tairikuViewController.xib */; };
-		E7435B7711A3682B00BF719F /* SetupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7435B7611A3682B00BF719F /* SetupViewController.xib */; };
-		E7435B7911A3682C00BF719F /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7435B7811A3682C00BF719F /* MainWindow.xib */; };
-		E7435B7B11A3682C00BF719F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7435B7A11A3682C00BF719F /* Localizable.strings */; };
-		E7435B8311A368C300BF719F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7435B8211A368C300BF719F /* InfoPlist.strings */; };
 		E7435BE311A3765800BF719F /* udon.png in Resources */ = {isa = PBXBuildFile; fileRef = E7435BE211A3765800BF719F /* udon.png */; };
 		E7435C0B11A380DC00BF719F /* MGTwitterEngine Licence.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E7435C0911A380DC00BF719F /* MGTwitterEngine Licence.rtf */; };
 		E7435C0C11A380DC00BF719F /* README.mkd in Resources */ = {isa = PBXBuildFile; fileRef = E7435C0A11A380DC00BF719F /* README.mkd */; };
 		E7A4AFE011A0AE87005A14BF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7A4AFD211A0AE87005A14BF /* Security.framework */; };
+		E7EBA13211A3E2A100BC940D /* udon_tairikuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* udon_tairikuViewController.xib */; };
+		E7EBA13311A3E2A700BC940D /* SetupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7FDB80611A018FE009F23F0 /* SetupViewController.xib */; };
+		E7EBA13411A3E2B900BC940D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7A4AFAF11A0A4AD005A14BF /* Localizable.strings */; };
+		E7EBA13511A3E2BF00BC940D /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		E7EBA13611A3E2C600BC940D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7435B8011A368A400BF719F /* InfoPlist.strings */; };
 		E7FDB463119FB4A7009F23F0 /* NSMutableURLRequest+Parameters.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FDB435119FB4A5009F23F0 /* NSMutableURLRequest+Parameters.m */; };
 		E7FDB464119FB4A7009F23F0 /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FDB437119FB4A5009F23F0 /* NSString+URLEncoding.m */; };
 		E7FDB465119FB4A7009F23F0 /* NSURL+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FDB439119FB4A5009F23F0 /* NSURL+Base.m */; };
@@ -66,23 +66,18 @@
 		1D3623250D0F684500981E51 /* udon_tairikuAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = udon_tairikuAppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* udon_tairiku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = udon_tairiku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		2899E5210DE3E06400AC0155 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/udon_tairikuViewController.xib; sourceTree = "<group>"; };
-		28AD733E0D9D9553002E5188 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		2899E5210DE3E06400AC0155 /* udon_tairikuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = udon_tairikuViewController.xib; sourceTree = "<group>"; };
+		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		28D7ACF60DDB3853001CB0EB /* udon_tairikuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = udon_tairikuViewController.h; sourceTree = "<group>"; };
 		28D7ACF70DDB3853001CB0EB /* udon_tairikuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = udon_tairikuViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* udon_tairiku_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = udon_tairiku_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* udon_tairiku-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "udon_tairiku-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
-		E7435B7C11A3684100BF719F /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Japanese; path = Japanese.lproj/udon_tairikuViewController.xib; sourceTree = "<group>"; };
-		E7435B7D11A3684800BF719F /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Japanese; path = Classes/Japanese.lproj/SetupViewController.xib; sourceTree = "<group>"; };
-		E7435B7E11A3684C00BF719F /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Japanese; path = Japanese.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		E7435B7F11A3685500BF719F /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/Localizable.strings; sourceTree = "<group>"; };
-		E7435B8011A368A400BF719F /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		E7435B8411A368C700BF719F /* Japanese */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Japanese; path = Japanese.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E7435B8011A368A400BF719F /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		E7435BE211A3765800BF719F /* udon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = udon.png; sourceTree = "<group>"; };
 		E7435C0911A380DC00BF719F /* MGTwitterEngine Licence.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = "MGTwitterEngine Licence.rtf"; sourceTree = "<group>"; };
 		E7435C0A11A380DC00BF719F /* README.mkd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.mkd; sourceTree = "<group>"; };
-		E7A4AFAF11A0A4AD005A14BF /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E7A4AFAF11A0A4AD005A14BF /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		E7A4AFD211A0AE87005A14BF /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		E7FDB434119FB4A4009F23F0 /* NSMutableURLRequest+Parameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+Parameters.h"; sourceTree = "<group>"; };
 		E7FDB435119FB4A5009F23F0 /* NSMutableURLRequest+Parameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+Parameters.m"; sourceTree = "<group>"; };
@@ -162,7 +157,7 @@
 		E7FDB761119FF872009F23F0 /* UdonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UdonView.m; sourceTree = "<group>"; };
 		E7FDB80411A018FE009F23F0 /* SetupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetupViewController.h; sourceTree = "<group>"; };
 		E7FDB80511A018FE009F23F0 /* SetupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetupViewController.m; sourceTree = "<group>"; };
-		E7FDB80611A018FE009F23F0 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = Classes/English.lproj/SetupViewController.xib; sourceTree = "<group>"; };
+		E7FDB80611A018FE009F23F0 /* SetupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SetupViewController.xib; path = Classes/SetupViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,12 +227,12 @@
 			isa = PBXGroup;
 			children = (
 				E7435BE211A3765800BF719F /* udon.png */,
-				E7435B7411A3681800BF719F /* udon_tairikuViewController.xib */,
-				E7435B7611A3682B00BF719F /* SetupViewController.xib */,
-				E7435B7811A3682C00BF719F /* MainWindow.xib */,
+				2899E5210DE3E06400AC0155 /* udon_tairikuViewController.xib */,
+				E7FDB80611A018FE009F23F0 /* SetupViewController.xib */,
+				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* udon_tairiku-Info.plist */,
-				E7435B7A11A3682C00BF719F /* Localizable.strings */,
-				E7435B8211A368C300BF719F /* InfoPlist.strings */,
+				E7A4AFAF11A0A4AD005A14BF /* Localizable.strings */,
+				E7435B8011A368A400BF719F /* InfoPlist.strings */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -422,12 +417,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7435B7911A3682C00BF719F /* MainWindow.xib in Resources */,
-				E7435B7511A3681800BF719F /* udon_tairikuViewController.xib in Resources */,
+				E7EBA13511A3E2BF00BC940D /* MainWindow.xib in Resources */,
+				E7EBA13211A3E2A100BC940D /* udon_tairikuViewController.xib in Resources */,
 				E7FDB472119FB4A7009F23F0 /* OATestServer.rb in Resources */,
-				E7435B7711A3682B00BF719F /* SetupViewController.xib in Resources */,
-				E7435B7B11A3682C00BF719F /* Localizable.strings in Resources */,
-				E7435B8311A368C300BF719F /* InfoPlist.strings in Resources */,
+				E7EBA13311A3E2A700BC940D /* SetupViewController.xib in Resources */,
+				E7EBA13411A3E2B900BC940D /* Localizable.strings in Resources */,
+				E7EBA13611A3E2C600BC940D /* InfoPlist.strings in Resources */,
 				E7435BE311A3765800BF719F /* udon.png in Resources */,
 				E7435C0B11A380DC00BF719F /* MGTwitterEngine Licence.rtf in Resources */,
 				E7435C0C11A380DC00BF719F /* README.mkd in Resources */,
@@ -483,54 +478,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		E7435B7411A3681800BF719F /* udon_tairikuViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2899E5210DE3E06400AC0155 /* English */,
-				E7435B7C11A3684100BF719F /* Japanese */,
-			);
-			name = udon_tairikuViewController.xib;
-			sourceTree = "<group>";
-		};
-		E7435B7611A3682B00BF719F /* SetupViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E7FDB80611A018FE009F23F0 /* English */,
-				E7435B7D11A3684800BF719F /* Japanese */,
-			);
-			name = SetupViewController.xib;
-			sourceTree = "<group>";
-		};
-		E7435B7811A3682C00BF719F /* MainWindow.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				28AD733E0D9D9553002E5188 /* English */,
-				E7435B7E11A3684C00BF719F /* Japanese */,
-			);
-			name = MainWindow.xib;
-			sourceTree = "<group>";
-		};
-		E7435B7A11A3682C00BF719F /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E7A4AFAF11A0A4AD005A14BF /* English */,
-				E7435B7F11A3685500BF719F /* Japanese */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		E7435B8211A368C300BF719F /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E7435B8011A368A400BF719F /* English */,
-				E7435B8411A368C700BF719F /* Japanese */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {

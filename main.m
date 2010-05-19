@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#define APP_DELEGATE ((udon_tairikuAppDelegate *)[[UIApplication sharedApplication] delegate])
 
 int main(int argc, char *argv[]) {
     

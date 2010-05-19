@@ -35,12 +35,20 @@
 	
 	if ([d stringForKey:@"oauth_key"] == nil) {
 		[d setObject:@"" forKey:@"oauth_key"];
-		NSLog(@"Set default: oauth_key %@", [d stringForKey:@"oauth_key"]);
 	}
 	if ([d stringForKey:@"oauth_secret"] == nil) {
 		[d setObject:@"" forKey:@"oauth_secret"];
-		NSLog(@"Set default: oauth_secret %@", [d stringForKey:@"oauth_secret"]);
 	}
+	if ([d integerForKey:@"tl_reload_interval"] == nil) {
+		[d setInteger:0 forKey:@"tl_reload_interval"];
+	}
+	if ([d integerForKey:@"mentions_reload_interval"] == nil) {
+		[d setInteger:0 forKey:@"mentions_reload_interval"];
+	}
+	if ([d integerForKey:@"default_page"] == nil) {
+		[d setInteger:0 forKey:@"default_page"];
+	}
+	
 	
 	[d synchronize];
 	[d release];

@@ -20,8 +20,10 @@
 	IBOutlet UINavigationItem *bar;
 	MGTwitterEngine *twit;
 	BOOL setup_done;
-		OAToken *oa_access_token;
+	OAToken *oa_access_token;
 }
+
+@property (retain, nonatomic) MGTwitterEngine *twit;
 
 - (IBAction) clearButtonIsPushed: (id)sender;
 - (void)showSetupView;
