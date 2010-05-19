@@ -1,0 +1,9 @@
+/* 
+   InfoPlist.strings
+   udon_tairiku
+
+   Created by Sora Harakami on 2010/5/19.
+   Copyright 2010 __MyCompanyName__. All rights reserved.
+ */
+
+CFBundleDisplayName = "Udon Tairiku";

@@ -1,0 +1,16 @@
+/* 
+   Localizable.strings
+   udon_tairiku
+
+   Created by Sora Harakami on 2010/5/17.
+   Copyright 2010 __MyCompanyName__. All rights reserved.
+ */
+
+"pin" = "PIN";
+"done_button_err0_title" = "Error";
+"done_button_err0_message" = "PIN field is empty";
+"done_button_err1_title" = "Error";
+"done_button_err1_message" = "Please tap \"Authorize\" first.\nNext tap \"Allow\", and copy PIN.\nThen back to this application and input PIN.";
+"untitled" = "Untitled";
+"post_error_title" = "Error";
+"post_error_msg" = "Failed to post.\nPlease try again later.";

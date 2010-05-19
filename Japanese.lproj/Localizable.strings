@@ -1,0 +1,16 @@
+/* 
+   Localizable.strings
+   udon_tairiku
+
+   Created by Sora Harakami on 2010/5/17.
+   Copyright 2010 __MyCompanyName__. All rights reserved.
+ */
+
+"pin" = "PIN";
+"done_button_err0_title" = "エラー";
+"done_button_err0_message" = "PINコードを入力してください";
+"done_button_err1_title" = "エラー";
+"done_button_err1_message" = "始めに\"認証\"をタップしTwitterのページを開き、アクセスを許可して取得できるPINコードを入力してください。";
+"untitled" = "名称未設定";
+"post_error_title" = "エラー";
+"post_error_msg" = "Postに失敗しました";
