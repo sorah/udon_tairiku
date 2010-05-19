@@ -39,7 +39,6 @@
 		E7FDB472119FB4A7009F23F0 /* OATestServer.rb in Resources */ = {isa = PBXBuildFile; fileRef = E7FDB454119FB4A7009F23F0 /* OATestServer.rb */; };
 		E7FDB473119FB4A7009F23F0 /* OAToken.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FDB456119FB4A7009F23F0 /* OAToken.m */; };
 		E7FDB474119FB4A7009F23F0 /* OATokenManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FDB458119FB4A7009F23F0 /* OATokenManager.m */; };
-		E7FDB475119FB4A7009F23F0 /* README in Resources */ = {isa = PBXBuildFile; fileRef = E7FDB45A119FB4A7009F23F0 /* README */; };
 		E7FDB4F1119FD146009F23F0 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FDB4F0119FD146009F23F0 /* libxml2.dylib */; };
 		E7FDB6BF119FD256009F23F0 /* MGTwitterEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FDB68A119FD255009F23F0 /* MGTwitterEngine.m */; };
 		E7FDB6C0119FD256009F23F0 /* MGTwitterHTTPURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = E7FDB68D119FD255009F23F0 /* MGTwitterHTTPURLConnection.m */; };
@@ -122,7 +121,6 @@
 		E7FDB457119FB4A7009F23F0 /* OATokenManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OATokenManager.h; sourceTree = "<group>"; };
 		E7FDB458119FB4A7009F23F0 /* OATokenManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OATokenManager.m; sourceTree = "<group>"; };
 		E7FDB459119FB4A7009F23F0 /* OAuthConsumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthConsumer.h; sourceTree = "<group>"; };
-		E7FDB45A119FB4A7009F23F0 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		E7FDB4F0119FD146009F23F0 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		E7FDB688119FD255009F23F0 /* MGTwitterEngineGlobalHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGTwitterEngineGlobalHeader.h; sourceTree = "<group>"; };
 		E7FDB689119FD255009F23F0 /* MGTwitterEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGTwitterEngine.h; sourceTree = "<group>"; };
@@ -285,7 +283,6 @@
 				E7FDB457119FB4A7009F23F0 /* OATokenManager.h */,
 				E7FDB458119FB4A7009F23F0 /* OATokenManager.m */,
 				E7FDB459119FB4A7009F23F0 /* OAuthConsumer.h */,
-				E7FDB45A119FB4A7009F23F0 /* README */,
 			);
 			name = OAuthConsumer;
 			sourceTree = "<group>";
@@ -428,7 +425,6 @@
 				E7435B7911A3682C00BF719F /* MainWindow.xib in Resources */,
 				E7435B7511A3681800BF719F /* udon_tairikuViewController.xib in Resources */,
 				E7FDB472119FB4A7009F23F0 /* OATestServer.rb in Resources */,
-				E7FDB475119FB4A7009F23F0 /* README in Resources */,
 				E7435B7711A3682B00BF719F /* SetupViewController.xib in Resources */,
 				E7435B7B11A3682C00BF719F /* Localizable.strings in Resources */,
 				E7435B8311A368C300BF719F /* InfoPlist.strings in Resources */,
@@ -571,7 +567,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				BUILD_STYLE = Debug;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone jb dev";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -588,7 +584,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				BUILD_STYLE = Release;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone jb dev";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;

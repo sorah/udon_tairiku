@@ -6,9 +6,26 @@ Udon Tairiku is __POST ONLY__ twitter client for iPhone OS.
 
 It consept is same as [Ra-men Tairiku](http://www16.atpages.jp/nigore/soft/).
 
+## Requirements
+
+* iPhone OS 3.1.3- (iPod touch, iPhone)
+
 ## Install
 
-Now 
+Now I don't have iPhone developer licence.
+
+### Cydia
+
+* Add Source: http://cydia.myrepospace.com/sorah/
+* Search: udon
+
+### JB + Mac + XCode + iPhone SDK
+
+<http://adeem.me/blog/2009/05/15/video-tutorial-bypassing-code-signature-in-xcode-installing-jail-break-application-to-iphone/>
+
+### Mac + XCode + iPhone SDK + iPhone developer licence
+
+Build and install by XCode.
 
 ## To-Do
 
