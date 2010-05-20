@@ -26,6 +26,11 @@
 	IBOutlet UIBarButtonItem *reload_button;
 	IBOutlet UIBarButtonItem *stop_button;
 	IBOutlet UISegmentedControl *timeline_switcher;
+	IBOutlet UIToolbar *toolbar;
+	IBOutlet UIBarButtonItem *toolbar_space;
+	NSArray *toolbar_items_timeline_hided;
+	NSArray *toolbar_items_refresh_button;
+	NSArray *toolbar_items_stop_button;
 }
 
 @property (retain, nonatomic) MGTwitterEngine *twit;

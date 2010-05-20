@@ -17,9 +17,18 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
         // Custom initialization
-
 		setup_done = NO;
-
+		toolbar_items_timeline_hided = [NSArray arrayWithObjects:show_timeline_button,nil];
+		toolbar_items_refresh_button = [NSArray arrayWithObjects:compose_button,
+																 toolbar_space,
+																 timeline_switcher,
+																 reload_button,nil];
+		toolbar_items_stop_button = [NSArray arrayWithObjects:compose_button,
+															  toolbar_space,
+															  timeline_switcher,
+															  stop_button,nil];
+		
+		
     }
     return self;
 }
@@ -36,7 +45,7 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-	/*[bar setRightBarButtonItem:nil animated:NO];*/
+	[bar setRightBarButtonItem:nil animated:NO];
 }
 
 - (void)initializeTwit {
@@ -180,11 +189,16 @@
 - (IBAction)stopReloadTimeline: (id)sender {}
 
 - (void)dealloc {
+	[toolbar dealloc];
+	[toolbar_items_timeline_hided dealloc];
+	[toolbar_items_refresh_button dealloc];
+	[toolbar_items_stop_button dealloc];
 	[timeline_switcher dealloc];
 	[show_timeline_button dealloc];
 	[compose_button dealloc];
 	[reload_button dealloc];
 	[stop_button dealloc];
+	[toolbar_space dealloc];
 	[twit dealloc];
 	[oa_access_token dealloc];
 	[d dealloc];
