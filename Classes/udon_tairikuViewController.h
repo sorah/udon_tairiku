@@ -28,9 +28,6 @@
 	IBOutlet UISegmentedControl *timeline_switcher;
 	IBOutlet UIToolbar *toolbar;
 	IBOutlet UIBarButtonItem *toolbar_space;
-	NSArray *toolbar_items_timeline_hided;
-	NSArray *toolbar_items_refresh_button;
-	NSArray *toolbar_items_stop_button;
 }
 
 @property (retain, nonatomic) MGTwitterEngine *twit;
@@ -38,6 +35,7 @@
 - (void)initializeTwit; // Initialize MGTwitterEngine *twit
 - (void)showSetupView; // show authorize dialog
 - (void)textViewDidChange:(UITextView *)textView; // Count text size in TextView
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView;
 - (void)requestSucceeded:(NSString *)i;
 - (void)requestFailed:(NSString *)i withError:(NSError *) error;
 - (void)clearHowToAuthorize:(NSTimer *)timer;

@@ -7,6 +7,10 @@
 //
 
 #import "udon_tairikuViewController.h"
+#define TOOLBAR_TL_HIDED [NSArray arrayWithObjects:show_timeline_button,nil]
+#define TOOLBAR_REFRESH_BUTTON [NSArray arrayWithObjects:compose_button,toolbar_space,[[UIBarButtonItem alloc] initWithCustomView:timeline_switcher],toolbar_space,reload_button,nil]
+#define TOOLBAR_STOP_BUTTON [NSArray arrayWithObjects:compose_button,toolbar_space,[[UIBarButtonItem alloc] initWithCustomView:timeline_switcher],toolbar_space,stop_button,nil]
+
 
 @implementation udon_tairikuViewController
 
@@ -37,16 +41,7 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-	toolbar_items_timeline_hided = [NSArray arrayWithObjects:show_timeline_button,nil];
-	toolbar_items_refresh_button = [NSArray arrayWithObjects:compose_button,
-									toolbar_space,
-									timeline_switcher,
-									reload_button,nil];
-	toolbar_items_stop_button = [NSArray arrayWithObjects:compose_button,
-								 toolbar_space,
-								 timeline_switcher,
-								 stop_button,nil];
-	[toolbar setItems:toolbar_items_timeline_hided animated:NO];
+
 	[bar setRightBarButtonItem:nil animated:NO];
 }
 
@@ -64,7 +59,21 @@
 
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
-
+	/*
+	toolbar_items_timeline_hided = [NSArray arrayWithObjects:show_timeline_button,nil];
+	toolbar_items_refresh_button = [NSArray arrayWithObjects:compose_button,
+									toolbar_space,
+									[[UIBarButtonItem alloc] initWithCustomView:timeline_switcher],
+									toolbar_space,
+									reload_button,nil];
+	toolbar_items_stop_button = [NSArray arrayWithObjects:compose_button,
+								 toolbar_space,
+								 [[UIBarButtonItem alloc] initWithCustomView:timeline_switcher],
+								 toolbar_space,
+								 stop_button,nil];
+	 */
+	 [toolbar setItems:[NSArray arrayWithObjects:show_timeline_button,nil] animated:NO];
+	
 	if (d == nil) 	d = [NSUserDefaults standardUserDefaults];
 	if (([[d stringForKey:@"oauth_key"] isEqualToString:@""] ||
 		 [[d stringForKey:@"oauth_secret"] isEqualToString:@""]) &&
@@ -159,10 +168,13 @@
 	[self presentModalViewController:setup_view animated:YES];
 }
 
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView {
+	[toolbar setItems:TOOLBAR_TL_HIDED animated:YES];
+	return YES;
+}
 
 - (void)textViewDidChange:(UITextView *)textView {
 	// http://www.cocoalife.net/2010/03/post_546.html
-	
 	// if text length longer than 100, change title
 	int remain = 140;
 	remain = 140 - [[tv text] length];
@@ -186,12 +198,12 @@
 - (IBAction)switchToTimeline: (id)sender {}
 
 - (IBAction)showTimeline: (id)sender {
-	[toolbar setItems:toolbar_items_refresh_button animated:YES];
+	[toolbar setItems:TOOLBAR_REFRESH_BUTTON animated:YES];
 	[tv resignFirstResponder];
 }
 
 - (IBAction)hideTimeline: (id)sender {
-	[toolbar setItems:toolbar_items_timeline_hided animated:YES];
+	[toolbar setItems:TOOLBAR_TL_HIDED animated:YES];
 	[tv	becomeFirstResponder];
 }
 
@@ -201,9 +213,6 @@
 
 - (void)dealloc {
 	[toolbar dealloc];
-	[toolbar_items_timeline_hided dealloc];
-	[toolbar_items_refresh_button dealloc];
-	[toolbar_items_stop_button dealloc];
 	[timeline_switcher dealloc];
 	[show_timeline_button dealloc];
 	[compose_button dealloc];
