@@ -39,13 +39,7 @@
 	if ([d stringForKey:@"oauth_secret"] == nil) {
 		[d setObject:@"" forKey:@"oauth_secret"];
 	}
-	if ([d integerForKey:@"tl_reload_interval"] == nil) {
-		[d setInteger:0 forKey:@"tl_reload_interval"];
-	}
-	if ([d integerForKey:@"mentions_reload_interval"] == nil) {
-		[d setInteger:0 forKey:@"mentions_reload_interval"];
-	}
-	if ([d integerForKey:@"default_page"] == nil) {
+	if ((NSInteger *)[d integerForKey:@"default_page"] == nil) {
 		[d setInteger:0 forKey:@"default_page"];
 	}
 	
