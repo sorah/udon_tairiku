@@ -45,6 +45,7 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+	[toolbar setItems:toolbar_items_timeline_hided animated:NO];
 	[bar setRightBarButtonItem:nil animated:NO];
 }
 
@@ -182,8 +183,17 @@
 
 - (IBAction)switchToMention: (id)sender {}
 - (IBAction)switchToTimeline: (id)sender {}
-- (IBAction)showTimeline: (id)sender {}
-- (IBAction)hideTimeline: (id)sender {}
+
+- (IBAction)showTimeline: (id)sender {
+	[toolbar setItems:toolbar_items_refresh_button animated:YES];
+	[tv resignFirstResponder];
+}
+
+- (IBAction)hideTimeline: (id)sender {
+	[toolbar setItems:toolbar_items_timeline_hided animated:YES];
+	[tv	becomeFirstResponder];
+}
+
 - (IBAction)switchTimeline: (id)sender {}
 - (IBAction)reloadTimeline: (id)sender {}
 - (IBAction)stopReloadTimeline: (id)sender {}
