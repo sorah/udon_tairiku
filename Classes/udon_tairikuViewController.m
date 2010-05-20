@@ -172,7 +172,18 @@
 }
 
 
+- (IBAction)switchToMention: (id)sender {}
+- (IBAction)switchToTimeline: (id)sender {}
+- (IBAction)showTimeline: (id)sender {}
+- (IBAction)hideTimeline: (id)sender {}
+- (IBAction)switchTimeline: (id)sender {}
+
 - (void)dealloc {
+	[timeline_switcher dealloc];
+	[show_timeline_button dealloc];
+	[compose_button dealloc];
+	[reload_button dealloc];
+	[stop_button dealloc];
 	[twit dealloc];
 	[oa_access_token dealloc];
 	[d dealloc];

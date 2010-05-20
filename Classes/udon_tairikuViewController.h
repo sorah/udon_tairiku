@@ -21,11 +21,16 @@
 	MGTwitterEngine *twit;
 	BOOL setup_done;
 	OAToken *oa_access_token;
+	IBOutlet UIBarButtonItem *show_timeline_button;
+	IBOutlet UIBarButtonItem *compose_button;
+	IBOutlet UIBarButtonItem *reload_button;
+	IBOutlet UIBarButtonItem *stop_button;
+	IBOutlet UISegmentedControl *timeline_switcher;
 }
 
 @property (retain, nonatomic) MGTwitterEngine *twit;
 
-- (IBAction) clearButtonIsPushed: (id)sender;
+- (IBAction)clearButtonIsPushed: (id)sender;
 - (void)showSetupView;
 - (IBAction)postButtonIsPushed: (id)sender;
 - (void)textViewDidChange:(UITextView *)textView;
@@ -33,6 +38,11 @@
 - (void)requestFailed:(NSString *)i withError:(NSError *) error;
 - (void)clearHowToAuthorize:(NSTimer *)timer;
 - (void)initializeTwit;
+- (IBAction)switchTimeline: (id)sender;
+- (IBAction)showTimeline: (id)sender;
+- (IBAction)hideTimeline: (id)sender;
+- (IBAction)reloadTimeline: (id)sender;
+- (IBAction)stopReloadTimeline: (id)sender;
 
 @end
 
