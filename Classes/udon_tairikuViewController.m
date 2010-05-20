@@ -171,7 +171,6 @@
 	}
 }
 
-
 - (IBAction)switchToMention: (id)sender {}
 - (IBAction)switchToTimeline: (id)sender {}
 - (IBAction)showTimeline: (id)sender {}

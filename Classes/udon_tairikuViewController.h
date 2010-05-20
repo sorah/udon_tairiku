@@ -30,19 +30,22 @@
 
 @property (retain, nonatomic) MGTwitterEngine *twit;
 
-- (IBAction)clearButtonIsPushed: (id)sender;
-- (void)showSetupView;
-- (IBAction)postButtonIsPushed: (id)sender;
-- (void)textViewDidChange:(UITextView *)textView;
+- (void)initializeTwit; // Initialize MGTwitterEngine *twit
+- (void)showSetupView; // show authorize dialog
+- (void)textViewDidChange:(UITextView *)textView; // Count text size in TextView
 - (void)requestSucceeded:(NSString *)i;
 - (void)requestFailed:(NSString *)i withError:(NSError *) error;
 - (void)clearHowToAuthorize:(NSTimer *)timer;
-- (void)initializeTwit;
-- (IBAction)switchTimeline: (id)sender;
+
+- (IBAction)clearButtonIsPushed: (id)sender;
+- (IBAction)postButtonIsPushed: (id)sender;
 - (IBAction)showTimeline: (id)sender;
 - (IBAction)hideTimeline: (id)sender;
+- (IBAction)switchTimeline: (id)sender;
 - (IBAction)reloadTimeline: (id)sender;
 - (IBAction)stopReloadTimeline: (id)sender;
+
+
 
 @end
 
