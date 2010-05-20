@@ -39,6 +39,18 @@
 	/*[bar setRightBarButtonItem:nil animated:NO];*/
 }
 
+- (void)initializeTwit {
+	if (twit == nil) {
+		OAConsumer *c = [((udon_tairikuAppDelegate *)[[UIApplication sharedApplication] delegate]).oaConsumer retain];
+		twit = [[MGTwitterEngine alloc] initWithDelegate:self];
+		[twit setUsesSecureConnection:NO];
+		[twit setConsumerKey:c.key secret:c.secret];
+		[twit setAccessToken:oa_access_token];
+		[c release];
+		NSLog(@"twit is now initialized.");
+	}	
+}
+
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
 
@@ -49,19 +61,10 @@
 		setup_done = YES;
 		[self showSetupView];
 	} else {
-		OAConsumer *c = [((udon_tairikuAppDelegate *)[[UIApplication sharedApplication] delegate]).oaConsumer retain];
 		if (oa_access_token == nil) {
 			oa_access_token = [[OAToken alloc] initWithKey:[d objectForKey:@"oauth_key"]
 													secret:[d objectForKey:@"oauth_secret"]];
 		}
-		if (twit == nil) {
-			twit = [[MGTwitterEngine alloc] initWithDelegate:self];
-			[twit setUsesSecureConnection:NO];
-			[twit setConsumerKey:c.key secret:c.secret];
-			[twit setAccessToken:oa_access_token];
-			[c release];
-		}
-		NSLog(@"%@", [twit description]);
 		if (animated) {
 			tv.editable = NO;
 			tv.text = NSLocalizedString(@"how_to_reauthorize",@"");
@@ -115,7 +118,8 @@
 
 - (IBAction)postButtonIsPushed: (id)sender {
 	[((udon_tairikuAppDelegate *)[[UIApplication sharedApplication] delegate]) turnOnWorkingView];
-	NSLog(@"%@",[twit sendUpdate:tv.text]);
+	[self initializeTwit];
+	[twit sendUpdate:tv.text];
 }
 
 - (void)requestSucceeded:(NSString *)i {
@@ -153,7 +157,6 @@
 	remain = 140 - [[tv text] length];
 
 	if (remain <= 40) {
-		NSLog(@"Change title");
 		bar.title = [NSString stringWithFormat:@"%d", remain];
 	} else {
 		bar.title = NSLocalizedString(@"untitled",@"");

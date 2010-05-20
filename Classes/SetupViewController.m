@@ -119,7 +119,6 @@
 														  secret:[d objectForKey:@"oauth_request_token_secret"]];
 		NSURL *oa_url_access_token = [[NSURL URLWithString:@"http://api.twitter.com/oauth/access_token"] retain];
 		
-		NSLog(@"%@",[oa_request_token description]);
 
 //		[oa_request_token setAttribute:@"oauth_verifier"
 //								 value:[pin_field text]];
@@ -227,7 +226,6 @@
 														encoding:NSUTF8StringEncoding];
 		OAToken *request_token = [[OAToken alloc] initWithHTTPResponseBody:response_body];
 		
-		NSLog(@"%@", [request_token description]);
 		
 		NSUserDefaults *d = [[NSUserDefaults standardUserDefaults] retain];
 		[d setObject:request_token.key forKey:@"oauth_request_token_key"];

@@ -32,6 +32,7 @@
 - (void)requestSucceeded:(NSString *)i;
 - (void)requestFailed:(NSString *)i withError:(NSError *) error;
 - (void)clearHowToAuthorize:(NSTimer *)timer;
+- (void)initializeTwit;
 
 @end
 

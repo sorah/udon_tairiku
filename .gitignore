@@ -2,3 +2,4 @@ build/
 .git_old/
 *.mode1v3
 *.pbxuser
+.DS_Store
