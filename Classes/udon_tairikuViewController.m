@@ -176,6 +176,8 @@
 - (IBAction)showTimeline: (id)sender {}
 - (IBAction)hideTimeline: (id)sender {}
 - (IBAction)switchTimeline: (id)sender {}
+- (IBAction)reloadTimeline: (id)sender {}
+- (IBAction)stopReloadTimeline: (id)sender {}
 
 - (void)dealloc {
 	[timeline_switcher dealloc];
