@@ -18,15 +18,7 @@
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
         // Custom initialization
 		setup_done = NO;
-		toolbar_items_timeline_hided = [NSArray arrayWithObjects:show_timeline_button,nil];
-		toolbar_items_refresh_button = [NSArray arrayWithObjects:compose_button,
-																 toolbar_space,
-																 timeline_switcher,
-																 reload_button,nil];
-		toolbar_items_stop_button = [NSArray arrayWithObjects:compose_button,
-															  toolbar_space,
-															  timeline_switcher,
-															  stop_button,nil];
+
 		
 		
     }
@@ -45,6 +37,15 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+	toolbar_items_timeline_hided = [NSArray arrayWithObjects:show_timeline_button,nil];
+	toolbar_items_refresh_button = [NSArray arrayWithObjects:compose_button,
+									toolbar_space,
+									timeline_switcher,
+									reload_button,nil];
+	toolbar_items_stop_button = [NSArray arrayWithObjects:compose_button,
+								 toolbar_space,
+								 timeline_switcher,
+								 stop_button,nil];
 	[toolbar setItems:toolbar_items_timeline_hided animated:NO];
 	[bar setRightBarButtonItem:nil animated:NO];
 }
