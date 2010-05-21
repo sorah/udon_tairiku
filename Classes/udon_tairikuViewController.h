@@ -13,14 +13,12 @@
 #import "OAuthConsumer.h"
 
 @interface udon_tairikuViewController : UIViewController <UITextViewDelegate, UITableViewDataSource> {
-	IBOutlet UITextView *tv;
 	NSUserDefaults *d;
-	SetupViewController *setup_view;
+	MGTwitterEngine *twit;
+	OAToken *oa_access_token;
+	IBOutlet UITextView *tv;
 	IBOutlet UIBarButtonItem *done_button;
 	IBOutlet UINavigationItem *bar;
-	MGTwitterEngine *twit;
-	BOOL setup_done;
-	OAToken *oa_access_token;
 	IBOutlet UIBarButtonItem *show_timeline_button;
 	IBOutlet UIBarButtonItem *compose_button;
 	IBOutlet UIBarButtonItem *reload_button;
@@ -29,7 +27,9 @@
 	IBOutlet UIToolbar *toolbar;
 	IBOutlet UITableView *timeline;
 	IBOutlet UIBarButtonItem *toolbar_space;
+	SetupViewController *setup_view;
 	int clear_button_count;
+	BOOL setup_done;
 }
 
 @property (retain, nonatomic) MGTwitterEngine *twit;
