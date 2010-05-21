@@ -36,11 +36,13 @@
 
 - (void)initializeTwit; // Initialize MGTwitterEngine *twit
 - (void)showSetupView; // show authorize dialog
+- (void)clearHowToAuthorize:(NSTimer *)timer;
+
 - (void)textViewDidChange:(UITextView *)textView; // Count text size in TextView
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView;
+
 - (void)requestSucceeded:(NSString *)i;
 - (void)requestFailed:(NSString *)i withError:(NSError *) error;
-- (void)clearHowToAuthorize:(NSTimer *)timer;
 
 - (IBAction)clearButtonIsPushed: (id)sender;
 - (IBAction)postButtonIsPushed: (id)sender;

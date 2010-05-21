@@ -22,23 +22,11 @@
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
         // Custom initialization
 		setup_done = NO;
-
 		clear_button_count = 0;
-		
     }
     return self;
 }
 
-
-/*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView {
-}
-*/
-
-
-
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -59,20 +47,8 @@
 
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
-	/*
-	toolbar_items_timeline_hided = [NSArray arrayWithObjects:show_timeline_button,nil];
-	toolbar_items_refresh_button = [NSArray arrayWithObjects:compose_button,
-									toolbar_space,
-									[[UIBarButtonItem alloc] initWithCustomView:timeline_switcher],
-									toolbar_space,
-									reload_button,nil];
-	toolbar_items_stop_button = [NSArray arrayWithObjects:compose_button,
-								 toolbar_space,
-								 [[UIBarButtonItem alloc] initWithCustomView:timeline_switcher],
-								 toolbar_space,
-								 stop_button,nil];
-	 */
-	 [toolbar setItems:[NSArray arrayWithObjects:show_timeline_button,nil] animated:NO];
+
+	[toolbar setItems:[NSArray arrayWithObjects:show_timeline_button,nil] animated:NO];
 	
 	if (d == nil) 	d = [NSUserDefaults standardUserDefaults];
 	if (([[d stringForKey:@"oauth_key"] isEqualToString:@""] ||
@@ -105,15 +81,6 @@
 	tv.editable = YES;
 	[tv becomeFirstResponder];
 }
-
-
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
 
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.
