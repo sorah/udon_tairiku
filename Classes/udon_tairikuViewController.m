@@ -187,13 +187,14 @@
 - (IBAction)switchTimeline: (id)sender {
 	NSLog(@"switchTimeline");
 	[d setInteger:timeline_switcher.selectedSegmentIndex forKey:@"default_page"];
+	[self loadSelectedTimeline];
 }
 
 - (IBAction)reloadTimeline: (id)sender {
 	if ([tl_identifier isEqualToString:@""]) {
-		NSLog(@"stopReloadTimeline");
-		[twit closeConnection:tl_identifier];
+		NSLog(@"reloadTimeline");
 		tl_identifier = @"";
+		[self loadSelectedTimeline];
 	}
 }
 
@@ -207,6 +208,9 @@
 }
 
 - (void)loadSelectedTimeline {
+	if (![tl_identifier isEqualToString:@""]) {
+		[twit closeConnection:tl_identifier];
+	}
 	tl_identifier = [twit getHomeTimelineSinceID:0 startingAtPage:0 count:20];
 }
 
