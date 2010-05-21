@@ -202,7 +202,7 @@
 - (void)statusesReceived:(NSArray *)statuses forRequest:(NSString *)i {
 	NSLog(@"statusesReceived");
 	tl_identifier = @"";
-	timeline_array = statuses;
+	timeline_array = [statuses retain];
 	[timeline reloadData];
 }
 
@@ -218,16 +218,64 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)table_view cellForRowAtIndexPath:(NSIndexPath *)index_path {
-	return [UITableViewCell alloc];
+	UITableViewCell *cell = [table_view dequeueReusableCellWithIdentifier:@"cell_for_timeline"];
+	NSDictionary *s = [[timeline_array objectAtIndex:index_path.row] retain];
+	if (cell == nil) {
+		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+									   reuseIdentifier:@"cell_for_timeline"] autorelease];
+		return cell;
+	}
+	cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+	UILabel *user_label = [[UILabel alloc] initWithFrame:CGRectMake(10, 6, 80, 30)];
+	UILabel *text_label = [[UILabel alloc] initWithFrame:CGRectMake(90, 6, 230, 
+											  [[self class] heightForContents:
+											   [s objectForKey:@"text"]])];	
+	
+	user_label.baselineAdjustment = YES;
+	text_label.numberOfLines = 0;
+	NSDictionary *u = [[s objectForKey:@"user"] retain];
+	user_label.text = [NSString stringWithFormat:@"%@",[u objectForKey:@"screen_name"]];
+	user_label.font = [UIFont boldSystemFontOfSize:11.0];
+	text_label.text = [s objectForKey:@"text"];
+	 text_label.font = [UIFont systemFontOfSize:14.0];
+	
+	[cell.contentView addSubview:user_label];
+	[cell.contentView addSubview:text_label];
+	
+	[user_label release];
+	[text_label release];
+	[u release];
+	[s release];
+	return cell;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [timeline_array count];
+    return 1;
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return [timeline_array count];
+}
+
+- (CGFloat)tableView:(UITableView *)table_view heightForRowAtIndexPath:(NSIndexPath *)index_path {
+	return [[self class] heightForContents:
+			[[timeline_array objectAtIndex:index_path.row] objectForKey:@"text"]];
+}
+
++ (CGFloat)heightForContents:(NSString *)contents {
+	// http://tech.actindi.net/3477191382
+    CGFloat result;
+    CGSize  labelSize;
+	
+    result = 0.0;
+    labelSize = [contents sizeWithFont:[UIFont systemFontOfSize:14.0]
+                     constrainedToSize:CGSizeMake(230, 10000)
+                         lineBreakMode:UILineBreakModeWordWrap];
+    result += labelSize.height;
+	result += 20;
+	
+    return result;
 }
 
 

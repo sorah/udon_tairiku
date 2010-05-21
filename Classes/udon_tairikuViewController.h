@@ -36,6 +36,8 @@
 
 @property (retain, nonatomic) MGTwitterEngine *twit;
 
++ (CGFloat)heightForContents:(NSString *)contents;
+
 - (void)initializeTwit; // Initialize MGTwitterEngine *twit
 - (void)showSetupView; // show authorize dialog
 - (void)clearHowToAuthorize:(NSTimer *)timer;
@@ -56,7 +58,10 @@
 - (IBAction)switchTimeline: (id)sender;
 - (IBAction)reloadTimeline: (id)sender;
 
-
+- (UITableViewCell *)tableView:(UITableView *)table_view cellForRowAtIndexPath:(NSIndexPath *)index_path;
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
+- (CGFloat)tableView:(UITableView *)table_view heightForRowAtIndexPath:(NSIndexPath *)index_path;
 
 @end
 
