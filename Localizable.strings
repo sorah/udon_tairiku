@@ -13,5 +13,5 @@
 "done_button_err1_message" = "Please tap \"Authorize\" first.\nNext tap \"Allow\", and copy PIN.\nThen back to this application and input PIN.";
 "untitled" = "Untitled";
 "post_error_title" = "Error";
-"post_error_msg" = "Failed to post.\nPlease try again later.";
+"post_error_msg" = "Failed to request.\nPlease try again later.";
 "how_to_reauthorize" = "↑ Tap to clear.\nReauthorize can by \"Settings.app\"\n\n\n\n\n↓ Show Timeline or Mentions";

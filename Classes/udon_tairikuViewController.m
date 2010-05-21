@@ -8,8 +8,8 @@
 
 #import "udon_tairikuViewController.h"
 #define TOOLBAR_TL_HIDED [NSArray arrayWithObjects:show_timeline_button,nil]
-#define TOOLBAR_REFRESH_BUTTON [NSArray arrayWithObjects:compose_button,toolbar_space,[[UIBarButtonItem alloc] initWithCustomView:timeline_switcher],toolbar_space,reload_button,nil]
-#define TOOLBAR_STOP_BUTTON [NSArray arrayWithObjects:compose_button,toolbar_space,[[UIBarButtonItem alloc] initWithCustomView:timeline_switcher],toolbar_space,stop_button,nil]
+#define TOOLBAR_TL [NSArray arrayWithObjects:compose_button,toolbar_space,[[UIBarButtonItem alloc] initWithCustomView:timeline_switcher],toolbar_space,reload_button,nil]
+
 
 
 @implementation udon_tairikuViewController
@@ -21,6 +21,8 @@
         // Custom initialization
 		setup_done = NO;
 		clear_button_count = 0;
+		post_identifier = @"";
+		tl_identifier = @"";
     }
     return self;
 }
@@ -107,17 +109,21 @@
 - (IBAction)postButtonIsPushed: (id)sender {
 	[((udon_tairikuAppDelegate *)[[UIApplication sharedApplication] delegate]) turnOnWorkingView];
 	[self initializeTwit];
-	[twit sendUpdate:tv.text];
+	post_identifier = [twit sendUpdate:tv.text];
 }
 
 - (void)requestSucceeded:(NSString *)i {
-	tv.text = @""; // Clear
-	bar.title = NSLocalizedString(@"untitled",@""); // Reset title
-	[((udon_tairikuAppDelegate *)[[UIApplication sharedApplication] delegate]) turnOffWorkingView];
+	if ([i isEqualToString:post_identifier]) {
+		tv.text = @""; // Clear
+		bar.title = NSLocalizedString(@"untitled",@""); // Reset title
+		[((udon_tairikuAppDelegate *)[[UIApplication sharedApplication] delegate]) turnOffWorkingView];
+	}
 }
 
 - (void)requestFailed:(NSString *)i withError:(NSError *) error {
-	[((udon_tairikuAppDelegate *)[[UIApplication sharedApplication] delegate]) turnOffWorkingView];
+	if ([i isEqualToString:post_identifier]) {
+		[((udon_tairikuAppDelegate *)[[UIApplication sharedApplication] delegate]) turnOffWorkingView];
+	}
 	UIAlertView *a = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"post_error_title",@"")
 												message:NSLocalizedString(@"post_error_msg",@"")
 											   delegate:self
@@ -167,7 +173,8 @@
 
 - (IBAction)showTimeline: (id)sender {
 	[self initializeTwit];
-	[toolbar setItems:TOOLBAR_REFRESH_BUTTON animated:YES];
+	tl_identifier = [twit getHomeTimelineSinceID:0 startingAtPage:0 count:20];
+	[toolbar setItems:TOOLBAR_TL animated:YES];
 	[tv resignFirstResponder];
 }
 
@@ -176,9 +183,22 @@
 	[tv	becomeFirstResponder];
 }
 
-- (IBAction)switchTimeline: (id)sender {}
-- (IBAction)reloadTimeline: (id)sender {}
-- (IBAction)stopReloadTimeline: (id)sender {}
+- (IBAction)switchTimeline: (id)sender {
+	[d setInteger:timeline_switcher.numberOfSegments forKey:@"default_page"];
+}
+
+- (IBAction)reloadTimeline: (id)sender {
+	if ([tl_identifier isEqualToString:@""]) {
+		NSLog(@"stopReloadTimeline");
+		[twit closeConnection:tl_identifier];
+		tl_identifier = @"";
+	}
+}
+
+- (void)statusesReceived:(NSArray *)statuses forRequest:(NSString *)i {
+	NSLog(@"statusesReceived");
+	tl_identifier = @"";
+}
 
 -(UITableViewCell *)tableView:(UITableView *)table_view cellForRowAtIndexPath:(NSIndexPath *)index_path {
 	return [UITableViewCell alloc];
@@ -201,7 +221,6 @@
 	[show_timeline_button dealloc];
 	[compose_button dealloc];
 	[reload_button dealloc];
-	[stop_button dealloc];
 	[toolbar_space dealloc];
 	[twit dealloc];
 	[oa_access_token dealloc];
@@ -210,6 +229,9 @@
 	[done_button dealloc];
 	[bar dealloc];
 	[tv dealloc];
+	[timeline_array dealloc];
+	[post_identifier dealloc];
+	[tl_identifier dealloc];
     [super dealloc];
 }
 

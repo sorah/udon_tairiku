@@ -22,7 +22,6 @@
 	IBOutlet UIBarButtonItem *show_timeline_button;
 	IBOutlet UIBarButtonItem *compose_button;
 	IBOutlet UIBarButtonItem *reload_button;
-	IBOutlet UIBarButtonItem *stop_button;
 	IBOutlet UISegmentedControl *timeline_switcher;
 	IBOutlet UIToolbar *toolbar;
 	IBOutlet UITableView *timeline;
@@ -30,6 +29,9 @@
 	SetupViewController *setup_view;
 	int clear_button_count;
 	BOOL setup_done;
+	NSArray *timeline_array;
+	NSString *post_identifier;
+	NSString *tl_identifier;
 }
 
 @property (retain, nonatomic) MGTwitterEngine *twit;
@@ -43,6 +45,7 @@
 
 - (void)requestSucceeded:(NSString *)i;
 - (void)requestFailed:(NSString *)i withError:(NSError *) error;
+- (void)statusesReceived:(NSArray *)statuses forRequest:(NSString *)i;
 
 - (IBAction)clearButtonIsPushed: (id)sender;
 - (IBAction)postButtonIsPushed: (id)sender;
@@ -50,7 +53,6 @@
 - (IBAction)hideTimeline: (id)sender;
 - (IBAction)switchTimeline: (id)sender;
 - (IBAction)reloadTimeline: (id)sender;
-- (IBAction)stopReloadTimeline: (id)sender;
 
 
 
