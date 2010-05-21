@@ -39,6 +39,8 @@
 - (void)initializeTwit; // Initialize MGTwitterEngine *twit
 - (void)showSetupView; // show authorize dialog
 - (void)clearHowToAuthorize:(NSTimer *)timer;
+- (void)setSegmentedControl;
+- (void)loadSelectedTimeline;
 
 - (void)textViewDidChange:(UITextView *)textView; // Count text size in TextView
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView;

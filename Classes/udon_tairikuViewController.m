@@ -173,7 +173,8 @@
 
 - (IBAction)showTimeline: (id)sender {
 	[self initializeTwit];
-	tl_identifier = [twit getHomeTimelineSinceID:0 startingAtPage:0 count:20];
+	[self setSegmentedControl];
+	[self loadSelectedTimeline];
 	[toolbar setItems:TOOLBAR_TL animated:YES];
 	[tv resignFirstResponder];
 }
@@ -184,7 +185,8 @@
 }
 
 - (IBAction)switchTimeline: (id)sender {
-	[d setInteger:timeline_switcher.numberOfSegments forKey:@"default_page"];
+	NSLog(@"switchTimeline");
+	[d setInteger:timeline_switcher.selectedSegmentIndex forKey:@"default_page"];
 }
 
 - (IBAction)reloadTimeline: (id)sender {
@@ -198,6 +200,14 @@
 - (void)statusesReceived:(NSArray *)statuses forRequest:(NSString *)i {
 	NSLog(@"statusesReceived");
 	tl_identifier = @"";
+}
+
+- (void)setSegmentedControl {
+	timeline_switcher.selectedSegmentIndex = [d integerForKey:@"default_page"];
+}
+
+- (void)loadSelectedTimeline {
+	tl_identifier = [twit getHomeTimelineSinceID:0 startingAtPage:0 count:20];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)table_view cellForRowAtIndexPath:(NSIndexPath *)index_path {
