@@ -376,6 +376,22 @@
 					</object>
 					<int key="connectionID">76</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">timeline</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="1072148684"/>
+					</object>
+					<int key="connectionID">77</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">dataSource</string>
+						<reference key="source" ref="1072148684"/>
+						<reference key="destination" ref="372490531"/>
+					</object>
+					<int key="connectionID">78</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -564,7 +580,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">76</int>
+			<int key="maxID">78</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -617,6 +633,7 @@
 							<string>reload_button</string>
 							<string>show_timeline_button</string>
 							<string>stop_button</string>
+							<string>timeline</string>
 							<string>timeline_switcher</string>
 							<string>toolbar</string>
 							<string>toolbar_space</string>
@@ -630,6 +647,7 @@
 							<string>UIBarButtonItem</string>
 							<string>UIBarButtonItem</string>
 							<string>UIBarButtonItem</string>
+							<string>UITableView</string>
 							<string>UISegmentedControl</string>
 							<string>UIToolbar</string>
 							<string>UIBarButtonItem</string>

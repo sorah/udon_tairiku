@@ -12,7 +12,7 @@
 #import "MGTwitterEngine.h"
 #import "OAuthConsumer.h"
 
-@interface udon_tairikuViewController : UIViewController <UITextViewDelegate> {
+@interface udon_tairikuViewController : UIViewController <UITextViewDelegate, UITableViewDataSource> {
 	IBOutlet UITextView *tv;
 	NSUserDefaults *d;
 	SetupViewController *setup_view;
@@ -27,6 +27,7 @@
 	IBOutlet UIBarButtonItem *stop_button;
 	IBOutlet UISegmentedControl *timeline_switcher;
 	IBOutlet UIToolbar *toolbar;
+	IBOutlet UITableView *timeline;
 	IBOutlet UIBarButtonItem *toolbar_space;
 	int clear_button_count;
 }

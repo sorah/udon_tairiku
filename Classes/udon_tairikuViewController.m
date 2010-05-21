@@ -207,6 +207,7 @@
 - (IBAction)switchToTimeline: (id)sender {}
 
 - (IBAction)showTimeline: (id)sender {
+	[self initializeTwit];
 	[toolbar setItems:TOOLBAR_REFRESH_BUTTON animated:YES];
 	[tv resignFirstResponder];
 }
@@ -220,8 +221,23 @@
 - (IBAction)reloadTimeline: (id)sender {}
 - (IBAction)stopReloadTimeline: (id)sender {}
 
+-(UITableViewCell *)tableView:(UITableView *)table_view cellForRowAtIndexPath:(NSIndexPath *)index_path {
+	return [UITableViewCell alloc];
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
+
+
 - (void)dealloc {
 	[toolbar dealloc];
+	[timeline dealloc];
 	[timeline_switcher dealloc];
 	[show_timeline_button dealloc];
 	[compose_button dealloc];
@@ -237,5 +253,6 @@
 	[tv dealloc];
     [super dealloc];
 }
+
 
 @end
