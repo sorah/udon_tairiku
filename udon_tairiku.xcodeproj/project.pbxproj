@@ -16,6 +16,7 @@
 		E7435C0B11A380DC00BF719F /* MGTwitterEngine Licence.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E7435C0911A380DC00BF719F /* MGTwitterEngine Licence.rtf */; };
 		E7435C0C11A380DC00BF719F /* README.mkd in Resources */ = {isa = PBXBuildFile; fileRef = E7435C0A11A380DC00BF719F /* README.mkd */; };
 		E7A4AFE011A0AE87005A14BF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7A4AFD211A0AE87005A14BF /* Security.framework */; };
+		E7B64F3711A6117A00550944 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E7B64F2F11A6117A00550944 /* Settings.bundle */; };
 		E7EBA13211A3E2A100BC940D /* udon_tairikuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* udon_tairikuViewController.xib */; };
 		E7EBA13311A3E2A700BC940D /* SetupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7FDB80611A018FE009F23F0 /* SetupViewController.xib */; };
 		E7EBA13411A3E2B900BC940D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7A4AFAF11A0A4AD005A14BF /* Localizable.strings */; };
@@ -79,6 +80,7 @@
 		E7435C0A11A380DC00BF719F /* README.mkd */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.mkd; sourceTree = "<group>"; };
 		E7A4AFAF11A0A4AD005A14BF /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		E7A4AFD211A0AE87005A14BF /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		E7B64F2F11A6117A00550944 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		E7FDB434119FB4A4009F23F0 /* NSMutableURLRequest+Parameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+Parameters.h"; sourceTree = "<group>"; };
 		E7FDB435119FB4A5009F23F0 /* NSMutableURLRequest+Parameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+Parameters.m"; sourceTree = "<group>"; };
 		E7FDB436119FB4A5009F23F0 /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E7B64F2F11A6117A00550944 /* Settings.bundle */,
 				E7435BE211A3765800BF719F /* udon.png */,
 				2899E5210DE3E06400AC0155 /* udon_tairikuViewController.xib */,
 				E7FDB80611A018FE009F23F0 /* SetupViewController.xib */,
@@ -426,6 +429,7 @@
 				E7435BE311A3765800BF719F /* udon.png in Resources */,
 				E7435C0B11A380DC00BF719F /* MGTwitterEngine Licence.rtf in Resources */,
 				E7435C0C11A380DC00BF719F /* README.mkd in Resources */,
+				E7B64F3711A6117A00550944 /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Title</key>
+	<string>Udon Tairiku</string>
+	<key>StringsTable</key>
+	<string>Root</string>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>Reauthorize_help</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
+			<string>Reauthorize</string>
+			<key>Key</key>
+			<string>reauthorize_pref</string>
+			<key>DefaultValue</key>
+			<false/>
+			<key>TrueValue</key>
+			<string>YES</string>
+			<key>FalseValue</key>
+			<string>NO</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+			<key>Title</key>
+			<string>About this application</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSTitleValueSpecifier</string>
+			<key>Title</key>
+			<string>Version</string>
+			<key>DefaultValue</key>
+			<string>1.5</string>
+			<key>Key</key>
+			<string>version_pref</string>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+			<key>Title</key>
+			<string>Legals</string>
+			<key>File</key>
+			<string>Legal</string>
+		</dict>
+	</array>
+</dict>
+</plist>

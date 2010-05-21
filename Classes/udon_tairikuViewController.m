@@ -128,12 +128,7 @@
 }
 
 - (IBAction)clearButtonIsPushed: (id)sender {
-	if ([tv.text isEqualToString: @""]) {
-		//Show setup view
-		[self showSetupView];
-	} else {
-		tv.text = @"";
-	}
+	tv.text = @"";
 }
 
 - (IBAction)postButtonIsPushed: (id)sender {

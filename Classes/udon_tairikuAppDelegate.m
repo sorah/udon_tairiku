@@ -33,6 +33,12 @@
 	// Set UserDefault
 	NSUserDefaults *d = [[NSUserDefaults standardUserDefaults] retain];
 	
+	if ([d boolForKey:@"reauthorize_pref"]) {
+		[d setObject:@"" forKey:@"oauth_key"];
+		[d setObject:@"" forKey:@"oauth_secret"];
+		[d setBool:NO forKey:@"reauthorize_pref"];
+	}
+	
 	if ([d stringForKey:@"oauth_key"] == nil) {
 		[d setObject:@"" forKey:@"oauth_key"];
 	}
