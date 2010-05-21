@@ -8,11 +8,17 @@ It consept is same as [Ra-men Tairiku](http://www16.atpages.jp/nigore/soft/).
 
 ## Requirements
 
-* iPhone OS 3.1.3- (iPod touch, iPhone)
+* __Jailbreaked__ iPhone OS 3.1.3- (iPod touch, iPhone)
+
+You must to do "JB", "Jailbreak" in __OWN YOUR RISK__
 
 ## Install
 
+### App Store
+
 Now I don't have iPhone developer licence.
+
+I'll deploy to App Store, soon!
 
 ### Cydia
 
@@ -23,17 +29,13 @@ Now I don't have iPhone developer licence.
 
 <http://adeem.me/blog/2009/05/15/video-tutorial-bypassing-code-signature-in-xcode-installing-jail-break-application-to-iphone/>
 
-### Mac + XCode + iPhone SDK + iPhone developer licence
+## How to use
 
-Build and install by XCode.
-
-## To-Do
-
-* Show Timeline & Mentions
+[cod.note - 20100519](http://d.hatena.ne.jp/codnote/20100519/1274246643) (Written in Japanese)
 
 ## License
 
-This software is cc-by-nc-sa. (without MGTwitterEngine, OAuthConsumer)
+This software is cc-by-nc-sa. __(without MGTwitterEngine, OAuthConsumer)__
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.1/jp/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.1/jp/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.1/jp/">Creative Commons Attribution-Noncommercial-Share Alike 2.1 Japan License</a>.
 
@@ -41,5 +43,31 @@ This software is cc-by-nc-sa. (without MGTwitterEngine, OAuthConsumer)
 
 ## Legals
 
-* This software includes [MGTwitterEngine](http://github.com/mattgemmell/MGTwitterEngine) code by Matt Gemmell.
-* This software includes [OAuthConsumer](http://github.com/jdg/oauthconsumer) code.
+### MGTwitterEngine
+
+This software includes [MGTwitterEngine](http://github.com/mattgemmell/MGTwitterEngine) code by Matt Gemmell.
+
+License file is "MGTwitterEngine Licence.rtf".
+
+### OAuthConsumer
+
+This software includes [OAuthConsumer](http://github.com/jdg/oauthconsumer) code.
+
+>Licensed under the Apache License, Version 2.0 (the "License");
+
+>you may not use this file except in compliance with the License.
+
+>You may obtain a copy of the License at
+
+>><http://www.apache.org/licenses/LICENSE-2.0>
+
+>Unless required by applicable law or agreed to in writing, software
+
+>distributed under the License is distributed on an "AS IS" BASIS,
+
+>WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+
+>See the License for the specific language governing permissions and
+
+>limitations under the License.
+
