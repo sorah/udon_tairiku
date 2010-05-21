@@ -23,6 +23,7 @@
 		clear_button_count = 0;
 		post_identifier = @"";
 		tl_identifier = @"";
+		timeline_array = [NSArray array];
     }
     return self;
 }
@@ -201,6 +202,8 @@
 - (void)statusesReceived:(NSArray *)statuses forRequest:(NSString *)i {
 	NSLog(@"statusesReceived");
 	tl_identifier = @"";
+	timeline_array = statuses;
+	[timeline reloadData];
 }
 
 - (void)setSegmentedControl {
@@ -219,7 +222,7 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return [timeline_array count];
 }
 
 
