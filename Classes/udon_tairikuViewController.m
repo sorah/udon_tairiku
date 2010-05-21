@@ -23,7 +23,7 @@
         // Custom initialization
 		setup_done = NO;
 
-		
+		clear_button_count = 0;
 		
     }
     return self;
@@ -128,7 +128,21 @@
 }
 
 - (IBAction)clearButtonIsPushed: (id)sender {
-	tv.text = @"";
+	if ([tv.text isEqualToString:@""]) {
+		clear_button_count++;
+		if (clear_button_count >= 5) {
+			UIAlertView *a = [[UIAlertView alloc] initWithTitle:@"Reauthorize is moved"
+														message:@"Turn on \"Reauthorize\" in Settings.app \"Udon Tairiku\""
+													   delegate:self
+											  cancelButtonTitle:@"OK"
+											  otherButtonTitles:nil];
+			[a show];
+			[a release];
+		}
+	} else {
+		clear_button_count = 0;
+		tv.text = @"";
+	}
 }
 
 - (IBAction)postButtonIsPushed: (id)sender {

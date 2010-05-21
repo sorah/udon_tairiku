@@ -28,6 +28,7 @@
 	IBOutlet UISegmentedControl *timeline_switcher;
 	IBOutlet UIToolbar *toolbar;
 	IBOutlet UIBarButtonItem *toolbar_space;
+	int clear_button_count;
 }
 
 @property (retain, nonatomic) MGTwitterEngine *twit;
