@@ -169,8 +169,6 @@
 	}
 }
 
-- (IBAction)switchToMention: (id)sender {}
-- (IBAction)switchToTimeline: (id)sender {}
 
 - (IBAction)showTimeline: (id)sender {
 	[self initializeTwit];
@@ -215,7 +213,14 @@
 	if (![tl_identifier isEqualToString:@""]) {
 		[twit closeConnection:tl_identifier];
 	}
-	tl_identifier = [twit getHomeTimelineSinceID:0 startingAtPage:0 count:20];
+	switch (timeline_switcher.selectedSegmentIndex) {
+		case 0:
+			tl_identifier = [twit getHomeTimelineSinceID:0 startingAtPage:0 count:20];
+			break;
+		case 1:
+			tl_identifier = [twit getRepliesSinceID:0 startingAtPage:0 count:20];
+			break;
+	}
 }
 
 -(UITableViewCell *)tableView:(UITableView *)table_view cellForRowAtIndexPath:(NSIndexPath *)index_path {
