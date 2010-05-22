@@ -203,6 +203,7 @@
 	NSLog(@"statusesReceived");
 	tl_identifier = @"";
 	timeline_array = [statuses retain];
+	tlid++;
 	[timeline reloadData];
 }
 
@@ -218,16 +219,19 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)table_view cellForRowAtIndexPath:(NSIndexPath *)index_path {
-	UITableViewCell *cell = [table_view dequeueReusableCellWithIdentifier:@"cell_for_timeline"];
+	UITableViewCell *cell = [table_view dequeueReusableCellWithIdentifier:
+							 [NSString stringWithFormat:@"cell_for_timeline%d%d", tlid, index_path.row]];
 	NSDictionary *s = [[timeline_array objectAtIndex:index_path.row] retain];
 	if (cell == nil) {
 		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-									   reuseIdentifier:@"cell_for_timeline"] autorelease];
+									   reuseIdentifier:[NSString stringWithFormat:
+														@"cell_for_timeline%d%d", tlid, index_path.row]] autorelease];
+	} else {
 		return cell;
 	}
 	cell.selectionStyle = UITableViewCellSelectionStyleBlue;
-	UILabel *user_label = [[UILabel alloc] initWithFrame:CGRectMake(10, 6, 80, 30)];
-	UILabel *text_label = [[UILabel alloc] initWithFrame:CGRectMake(90, 6, 230, 
+	UILabel *user_label = [[UILabel alloc] initWithFrame:CGRectMake(10, 3, 80, 30)];
+	UILabel *text_label = [[UILabel alloc] initWithFrame:CGRectMake(90, 3, 220, 
 											  [[self class] heightForContents:
 											   [s objectForKey:@"text"]])];	
 	
@@ -237,7 +241,7 @@
 	user_label.text = [NSString stringWithFormat:@"%@",[u objectForKey:@"screen_name"]];
 	user_label.font = [UIFont boldSystemFontOfSize:11.0];
 	text_label.text = [s objectForKey:@"text"];
-	 text_label.font = [UIFont systemFontOfSize:14.0];
+	 text_label.font = [UIFont systemFontOfSize:13.0];
 	
 	[cell.contentView addSubview:user_label];
 	[cell.contentView addSubview:text_label];
@@ -269,11 +273,11 @@
     CGSize  labelSize;
 	
     result = 0.0;
-    labelSize = [contents sizeWithFont:[UIFont systemFontOfSize:14.0]
-                     constrainedToSize:CGSizeMake(230, 10000)
+    labelSize = [contents sizeWithFont:[UIFont systemFontOfSize:13.0]
+                     constrainedToSize:CGSizeMake(220, 10000)
                          lineBreakMode:UILineBreakModeWordWrap];
     result += labelSize.height;
-	result += 20;
+	result += 12;
 	
     return result;
 }

@@ -29,6 +29,7 @@
 	SetupViewController *setup_view;
 	int clear_button_count;
 	BOOL setup_done;
+	int tlid;
 	NSArray *timeline_array;
 	NSString *post_identifier;
 	NSString *tl_identifier;
