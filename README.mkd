@@ -2,7 +2,7 @@
 
 ## What's this?
 
-Udon Tairiku is __POST ONLY__ twitter client for iPhone OS.
+Udon Tairiku is twitter client for iPhone OS.
 
 It consept is same as [Ra-men Tairiku](http://www16.atpages.jp/nigore/soft/).
 
