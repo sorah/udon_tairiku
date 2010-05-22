@@ -22,7 +22,7 @@
 	IBOutlet UIBarButtonItem *show_timeline_button;
 	IBOutlet UIBarButtonItem *compose_button;
 	IBOutlet UIBarButtonItem *reload_button;
-	IBOutlet UISegmentedControl *timeline_switcher;
+	IBOutlet UIBarButtonItem *timeline_switcher;
 	IBOutlet UIToolbar *toolbar;
 	IBOutlet UITableView *timeline;
 	IBOutlet UIBarButtonItem *toolbar_space;

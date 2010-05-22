@@ -8,7 +8,8 @@
 
 #import "udon_tairikuViewController.h"
 #define TOOLBAR_TL_HIDED [NSArray arrayWithObjects:show_timeline_button,nil]
-#define TOOLBAR_TL [NSArray arrayWithObjects:compose_button,toolbar_space,[[UIBarButtonItem alloc] initWithCustomView:timeline_switcher],toolbar_space,reload_button,nil]
+//[[UIBarButtonItem alloc] initWithCustomView:timeline_switcher]
+#define TOOLBAR_TL [NSArray arrayWithObjects:compose_button,toolbar_space,timeline_switcher,toolbar_space,reload_button,nil]
 
 
 
@@ -192,7 +193,7 @@
 
 - (IBAction)switchTimeline: (id)sender {
 	NSLog(@"switchTimeline");
-	[d setInteger:timeline_switcher.selectedSegmentIndex forKey:@"default_page"];
+	[d setInteger:((UISegmentedControl *)timeline_switcher.customView).selectedSegmentIndex forKey:@"default_page"];
 	[self loadSelectedTimeline];
 }
 
@@ -217,14 +218,14 @@
 }
 
 - (void)setSegmentedControl {
-	timeline_switcher.selectedSegmentIndex = [d integerForKey:@"default_page"];
+	((UISegmentedControl *)timeline_switcher.customView).selectedSegmentIndex = [d integerForKey:@"default_page"];
 }
 
 - (void)loadSelectedTimeline {
 	if (![tl_identifier isEqualToString:@""]) {
 		[twit closeConnection:tl_identifier];
 	}
-	switch (timeline_switcher.selectedSegmentIndex) {
+	switch (((UISegmentedControl *)timeline_switcher.customView).selectedSegmentIndex) {
 		case 0:
 			tl_identifier = [[twit getHomeTimelineSinceID:0 startingAtPage:0 count:20] retain];
 			break;
@@ -237,7 +238,6 @@
 -(UITableViewCell *)tableView:(UITableView *)table_view cellForRowAtIndexPath:(NSIndexPath *)index_path {
 	UITableViewCell *cell = [table_view dequeueReusableCellWithIdentifier:
 							 [NSString stringWithFormat:@"cell_for_timeline%d%d", tlid, index_path.row]];
-	NSDictionary *s = [[timeline_array objectAtIndex:index_path.row] retain];
 	if (cell == nil) {
 		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
 									   reuseIdentifier:[NSString stringWithFormat:
@@ -245,6 +245,7 @@
 	} else {
 		return cell;
 	}
+	NSDictionary *s = [[timeline_array objectAtIndex:index_path.row] retain];
 	cell.selectionStyle = UITableViewCellSelectionStyleBlue;
 	UILabel *user_label = [[UILabel alloc] initWithFrame:CGRectMake(10, 3, 80, 30)];
 	UILabel *text_label = [[UILabel alloc] initWithFrame:CGRectMake(90, 3, 220, 
