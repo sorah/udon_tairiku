@@ -24,6 +24,7 @@
 		post_identifier = @"";
 		tl_identifier = @"";
 		timeline_array = [NSArray array];
+		in_reply_to_status_id = @"";
     }
     return self;
 }
@@ -103,6 +104,7 @@
 		}
 	} else {
 		clear_button_count = 0;
+		in_reply_to_status_id = @"";
 		tv.text = @"";
 	}
 }
@@ -110,12 +112,17 @@
 - (IBAction)postButtonIsPushed: (id)sender {
 	[((udon_tairikuAppDelegate *)[[UIApplication sharedApplication] delegate]) turnOnWorkingView];
 	[self initializeTwit];
-	post_identifier = [twit sendUpdate:tv.text];
+	if ([in_reply_to_status_id isEqualToString:@""]) {
+		post_identifier = [[twit sendUpdate:tv.text] retain];
+	} else {
+		post_identifier = [[twit sendUpdate:tv.text inReplyTo:[in_reply_to_status_id longLongValue]] retain];
+	}
 }
 
 - (void)requestSucceeded:(NSString *)i {
 	if ([i isEqualToString:post_identifier]) {
 		tv.text = @""; // Clear
+		in_reply_to_status_id = @"";
 		bar.title = NSLocalizedString(@"untitled",@""); // Reset title
 		[((udon_tairikuAppDelegate *)[[UIApplication sharedApplication] delegate]) turnOffWorkingView];
 	}
@@ -198,11 +205,15 @@
 }
 
 - (void)statusesReceived:(NSArray *)statuses forRequest:(NSString *)i {
-	NSLog(@"statusesReceived");
-	tl_identifier = @"";
-	timeline_array = [statuses retain];
-	tlid++;
-	[timeline reloadData];
+	if ([i isEqualToString:tl_identifier]) {
+		NSLog(@"statusesReceived");
+		tl_identifier = @"";
+		[timeline_array release];
+		timeline_array = [statuses retain];
+		tlid++;
+		[timeline reloadData];
+		tl_identifier = @"";
+	}
 }
 
 - (void)setSegmentedControl {
@@ -215,10 +226,10 @@
 	}
 	switch (timeline_switcher.selectedSegmentIndex) {
 		case 0:
-			tl_identifier = [twit getHomeTimelineSinceID:0 startingAtPage:0 count:20];
+			tl_identifier = [[twit getHomeTimelineSinceID:0 startingAtPage:0 count:20] retain];
 			break;
 		case 1:
-			tl_identifier = [twit getRepliesSinceID:0 startingAtPage:0 count:20];
+			tl_identifier = [[twit getRepliesSinceID:0 startingAtPage:0 count:20] retain];
 			break;
 	}
 }
@@ -272,6 +283,15 @@
 			[[timeline_array objectAtIndex:index_path.row] objectForKey:@"text"]];
 }
 
+- (void)tableView:(UITableView *)table_view didSelectRowAtIndexPath:(NSIndexPath *)index_path {
+	[table_view deselectRowAtIndexPath:index_path animated:YES];
+	in_reply_to_status_id = [[[timeline_array objectAtIndex:index_path.row] objectForKey:@"id"] retain];
+	tv.text = [NSString stringWithFormat:@"@%@ ",
+										 [[[timeline_array objectAtIndex:index_path.row] objectForKey:@"user"]
+										  objectForKey:@"screen_name"]];
+	[tv becomeFirstResponder];
+}
+
 + (CGFloat)heightForContents:(NSString *)contents {
 	// http://tech.actindi.net/3477191382
     CGFloat result;
@@ -306,6 +326,7 @@
 	[timeline_array dealloc];
 	[post_identifier dealloc];
 	[tl_identifier dealloc];
+	[in_reply_to_status_id dealloc];
     [super dealloc];
 }
 

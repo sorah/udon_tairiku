@@ -33,6 +33,7 @@
 	NSArray *timeline_array;
 	NSString *post_identifier;
 	NSString *tl_identifier;
+	NSString *in_reply_to_status_id;
 }
 
 @property (retain, nonatomic) MGTwitterEngine *twit;
@@ -63,6 +64,6 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView;
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
 - (CGFloat)tableView:(UITableView *)table_view heightForRowAtIndexPath:(NSIndexPath *)index_path;
-
+- (void)tableView:(UITableView *)table_view didSelectRowAtIndexPath:(NSIndexPath *)index_path;
 @end
 
