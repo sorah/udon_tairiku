@@ -3,7 +3,6 @@
 //  udon_tairiku
 //
 //  Created by Sora Harakami on 2010/5/16.
-//  Copyright __MyCompanyName__ 2010. All rights reserved.
 //
 
 #import "udon_tairikuAppDelegate.h"

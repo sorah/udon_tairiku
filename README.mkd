@@ -16,8 +16,6 @@ You must to do "JB", "Jailbreak" in __OWN YOUR RISK__
 
 ### App Store
 
-Now I don't have iPhone developer licence.
-
 I'll deploy to App Store, soon!
 
 ### Cydia
