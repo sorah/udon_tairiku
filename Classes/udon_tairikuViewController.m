@@ -36,6 +36,10 @@
 }
 
 - (void)initializeTwit {
+	if (oa_access_token == nil) {
+		oa_access_token = [[OAToken alloc] initWithKey:[d objectForKey:@"oauth_key"]
+												secret:[d objectForKey:@"oauth_secret"]];
+	}
 	if (twit == nil) {
 		OAConsumer *c = [((udon_tairikuAppDelegate *)[[UIApplication sharedApplication] delegate]).oaConsumer retain];
 		twit = [[MGTwitterEngine alloc] initWithDelegate:self];
@@ -52,6 +56,18 @@
 
 	[toolbar setItems:[NSArray arrayWithObjects:show_timeline_button,nil] animated:NO];
 	
+	if ([[Reachability reachabilityForInternetConnection] currentReachabilityStatus] == NotReachable) {
+		UIAlertView *a = [[UIAlertView alloc] initWithTitle:@"Error"
+													message:@"No internet connection"
+												   delegate:self
+										  cancelButtonTitle:@"OK"
+										  otherButtonTitles:nil];
+		[a show];
+		[a release];
+	}
+	
+
+	
 	if (d == nil) 	d = [NSUserDefaults standardUserDefaults];
 	if (([[d stringForKey:@"oauth_key"] isEqualToString:@""] ||
 		 [[d stringForKey:@"oauth_secret"] isEqualToString:@""]) &&
@@ -59,10 +75,6 @@
 		setup_done = YES;
 		[self showSetupView];
 	} else {
-		if (oa_access_token == nil) {
-			oa_access_token = [[OAToken alloc] initWithKey:[d objectForKey:@"oauth_key"]
-													secret:[d objectForKey:@"oauth_secret"]];
-		}
 		if (animated) {
 			tv.editable = NO;
 			tv.text = NSLocalizedString(@"how_to_reauthorize",@"");

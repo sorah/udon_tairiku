@@ -10,6 +10,7 @@
 #import "udon_tairikuAppDelegate.h"
 #import "MGTwitterEngine.h"
 #import "OAuthConsumer.h"
+#import "Reachability.h"
 
 @interface udon_tairikuViewController : UIViewController <UITextViewDelegate, UITableViewDataSource> {
 	NSUserDefaults *d;

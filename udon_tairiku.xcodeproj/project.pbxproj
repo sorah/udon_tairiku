@@ -19,6 +19,7 @@
 		E7B64F3711A6117A00550944 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E7B64F2F11A6117A00550944 /* Settings.bundle */; };
 		E7D507B011AA66BB00A91840 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D507AD11AA66BB00A91840 /* Reachability.m */; };
 		E7D507B111AA66BB00A91840 /* ReachabilityAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D507AF11AA66BB00A91840 /* ReachabilityAppDelegate.m */; };
+		E7D5086311AA67AD00A91840 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7D5085111AA67AD00A91840 /* SystemConfiguration.framework */; };
 		E7EBA13211A3E2A100BC940D /* udon_tairikuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* udon_tairikuViewController.xib */; };
 		E7EBA13311A3E2A700BC940D /* SetupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7FDB80611A018FE009F23F0 /* SetupViewController.xib */; };
 		E7EBA13411A3E2B900BC940D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7A4AFAF11A0A4AD005A14BF /* Localizable.strings */; };
@@ -87,6 +88,7 @@
 		E7D507AD11AA66BB00A91840 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		E7D507AE11AA66BB00A91840 /* ReachabilityAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachabilityAppDelegate.h; sourceTree = "<group>"; };
 		E7D507AF11AA66BB00A91840 /* ReachabilityAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachabilityAppDelegate.m; sourceTree = "<group>"; };
+		E7D5085111AA67AD00A91840 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		E7FDB434119FB4A4009F23F0 /* NSMutableURLRequest+Parameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+Parameters.h"; sourceTree = "<group>"; };
 		E7FDB435119FB4A5009F23F0 /* NSMutableURLRequest+Parameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+Parameters.m"; sourceTree = "<group>"; };
 		E7FDB436119FB4A5009F23F0 /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				E7FDB4F1119FD146009F23F0 /* libxml2.dylib in Frameworks */,
 				E7A4AFE011A0AE87005A14BF /* Security.framework in Frameworks */,
+				E7D5086311AA67AD00A91840 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +257,7 @@
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				E7FDB4F0119FD146009F23F0 /* libxml2.dylib */,
 				E7A4AFD211A0AE87005A14BF /* Security.framework */,
+				E7D5085111AA67AD00A91840 /* SystemConfiguration.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
