@@ -20,7 +20,7 @@
 		E7D507B011AA66BB00A91840 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D507AD11AA66BB00A91840 /* Reachability.m */; };
 		E7D507B111AA66BB00A91840 /* ReachabilityAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D507AF11AA66BB00A91840 /* ReachabilityAppDelegate.m */; };
 		E7D5086311AA67AD00A91840 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7D5085111AA67AD00A91840 /* SystemConfiguration.framework */; };
-		E7EA8D0311AA746600344C08 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E7EA8D0211AA746600344C08 /* Default.png */; };
+		E7EA8DB711AA9FD900344C08 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E7EA8DB611AA9FD900344C08 /* Default.png */; };
 		E7EBA13211A3E2A100BC940D /* udon_tairikuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* udon_tairikuViewController.xib */; };
 		E7EBA13311A3E2A700BC940D /* SetupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7FDB80611A018FE009F23F0 /* SetupViewController.xib */; };
 		E7EBA13411A3E2B900BC940D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7A4AFAF11A0A4AD005A14BF /* Localizable.strings */; };
@@ -90,7 +90,7 @@
 		E7D507AE11AA66BB00A91840 /* ReachabilityAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachabilityAppDelegate.h; sourceTree = "<group>"; };
 		E7D507AF11AA66BB00A91840 /* ReachabilityAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachabilityAppDelegate.m; sourceTree = "<group>"; };
 		E7D5085111AA67AD00A91840 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		E7EA8D0211AA746600344C08 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		E7EA8DB611AA9FD900344C08 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		E7FDB434119FB4A4009F23F0 /* NSMutableURLRequest+Parameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+Parameters.h"; sourceTree = "<group>"; };
 		E7FDB435119FB4A5009F23F0 /* NSMutableURLRequest+Parameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+Parameters.m"; sourceTree = "<group>"; };
 		E7FDB436119FB4A5009F23F0 /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
@@ -242,11 +242,11 @@
 				E7435BE211A3765800BF719F /* udon.png */,
 				2899E5210DE3E06400AC0155 /* udon_tairikuViewController.xib */,
 				E7FDB80611A018FE009F23F0 /* SetupViewController.xib */,
-				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* udon_tairiku-Info.plist */,
 				E7A4AFAF11A0A4AD005A14BF /* Localizable.strings */,
+				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				E7435B8011A368A400BF719F /* InfoPlist.strings */,
-				E7EA8D0211AA746600344C08 /* Default.png */,
+				E7EA8DB611AA9FD900344C08 /* Default.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -466,7 +466,7 @@
 				E7435C0B11A380DC00BF719F /* MGTwitterEngine Licence.rtf in Resources */,
 				E7435C0C11A380DC00BF719F /* README.mkd in Resources */,
 				E7B64F3711A6117A00550944 /* Settings.bundle in Resources */,
-				E7EA8D0311AA746600344C08 /* Default.png in Resources */,
+				E7EA8DB711AA9FD900344C08 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,7 +557,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				BUILD_STYLE = Debug;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Masayuki Fukumori (W5642EL2Q4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -565,6 +565,7 @@
 				HEADER_SEARCH_PATHS = $SDKROOT/usr/include/libxml2;
 				LIBRARY_SEARCH_PATHS = "";
 				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos3.1.3;
 			};
 			name = Debug;
@@ -574,7 +575,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				BUILD_STYLE = Release;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Masayuki Fukumori (W5642EL2Q4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -583,6 +584,7 @@
 				LIBRARY_SEARCH_PATHS = "";
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos3.1.3;
 			};
 			name = Release;
