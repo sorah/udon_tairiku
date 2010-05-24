@@ -8,20 +8,16 @@ It consept is same as [Ra-men Tairiku](http://www16.atpages.jp/nigore/soft/).
 
 ## Requirements
 
-* __Jailbreaked__ iPhone OS 3.1.3- (iPod touch, iPhone)
+* iPhone OS 3.1.3- (iPod touch, iPhone)
 
-You must to do "JB", "Jailbreak" in __OWN YOUR RISK__
 
 ## Install
 
 ### App Store
 
-I'll deploy to App Store, soon!
+I throwed this application to Apple.
 
-### Cydia
-
-* Add Source: http://cydia.myrepospace.com/sorah/
-* Search: udon
+This application will avaiable in App Store! ;-)
 
 ## How to use
 
