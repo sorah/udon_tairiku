@@ -23,23 +23,29 @@ I'll deploy to App Store, soon!
 * Add Source: http://cydia.myrepospace.com/sorah/
 * Search: udon
 
-### JB + Mac + XCode + iPhone SDK
-
-<http://adeem.me/blog/2009/05/15/video-tutorial-bypassing-code-signature-in-xcode-installing-jail-break-application-to-iphone/>
-
 ## How to use
 
 [cod.note - 20100519](http://d.hatena.ne.jp/codnote/20100519/1274246643) (Written in Japanese)
 
 ## License
 
-This software is cc-by-nc-sa. __(without MGTwitterEngine, OAuthConsumer)__
+This software is cc-by-nc-sa. __(without MGTwitterEngine, OAuthConsumer, Reachability)__
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.1/jp/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.1/jp/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.1/jp/">Creative Commons Attribution-Noncommercial-Share Alike 2.1 Japan License</a>.
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.1/jp/">
+<img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/2.1/jp/88x31.png" />
+</a><br />
+This work is licensed under a
+ <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.1/jp/">
+Creative Commons Attribution-Noncommercial-Share Alike 2.1 Japan License</a>.
 
 (c) Sora Harakami
 
 ## Legals
+
+### Reachability
+
+Reachability is copied from sample code of Apple:
+ [Reachability](http://developer.apple.com/iphone/library/samplecode/Reachability/Introduction/Intro.html).
 
 ### MGTwitterEngine
 

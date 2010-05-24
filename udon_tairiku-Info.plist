@@ -24,8 +24,6 @@
 	<true/>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
-	<key>LSRequiresIPhoneOS</key>
-	<false/>
 	<key>NSMainNibFile</key>
 	<string>MainWindow</string>
 </dict>

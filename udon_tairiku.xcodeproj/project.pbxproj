@@ -17,6 +17,8 @@
 		E7435C0C11A380DC00BF719F /* README.mkd in Resources */ = {isa = PBXBuildFile; fileRef = E7435C0A11A380DC00BF719F /* README.mkd */; };
 		E7A4AFE011A0AE87005A14BF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7A4AFD211A0AE87005A14BF /* Security.framework */; };
 		E7B64F3711A6117A00550944 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E7B64F2F11A6117A00550944 /* Settings.bundle */; };
+		E7D507B011AA66BB00A91840 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D507AD11AA66BB00A91840 /* Reachability.m */; };
+		E7D507B111AA66BB00A91840 /* ReachabilityAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E7D507AF11AA66BB00A91840 /* ReachabilityAppDelegate.m */; };
 		E7EBA13211A3E2A100BC940D /* udon_tairikuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* udon_tairikuViewController.xib */; };
 		E7EBA13311A3E2A700BC940D /* SetupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7FDB80611A018FE009F23F0 /* SetupViewController.xib */; };
 		E7EBA13411A3E2B900BC940D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E7A4AFAF11A0A4AD005A14BF /* Localizable.strings */; };
@@ -81,6 +83,10 @@
 		E7A4AFAF11A0A4AD005A14BF /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		E7A4AFD211A0AE87005A14BF /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		E7B64F2F11A6117A00550944 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		E7D507AC11AA66BB00A91840 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		E7D507AD11AA66BB00A91840 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		E7D507AE11AA66BB00A91840 /* ReachabilityAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReachabilityAppDelegate.h; sourceTree = "<group>"; };
+		E7D507AF11AA66BB00A91840 /* ReachabilityAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReachabilityAppDelegate.m; sourceTree = "<group>"; };
 		E7FDB434119FB4A4009F23F0 /* NSMutableURLRequest+Parameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+Parameters.h"; sourceTree = "<group>"; };
 		E7FDB435119FB4A5009F23F0 /* NSMutableURLRequest+Parameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+Parameters.m"; sourceTree = "<group>"; };
 		E7FDB436119FB4A5009F23F0 /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
@@ -180,6 +186,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E7D5079811AA66A500A91840 /* Reachability */,
 				E7FDB687119FD255009F23F0 /* MATwitterEngine */,
 				E7FDB432119FB4A3009F23F0 /* OAuthConsumer */,
 				1D3623240D0F684500981E51 /* udon_tairikuAppDelegate.h */,
@@ -249,6 +256,17 @@
 				E7A4AFD211A0AE87005A14BF /* Security.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E7D5079811AA66A500A91840 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				E7D507AC11AA66BB00A91840 /* Reachability.h */,
+				E7D507AD11AA66BB00A91840 /* Reachability.m */,
+				E7D507AE11AA66BB00A91840 /* ReachabilityAppDelegate.h */,
+				E7D507AF11AA66BB00A91840 /* ReachabilityAppDelegate.m */,
+			);
+			name = Reachability;
 			sourceTree = "<group>";
 		};
 		E7FDB432119FB4A3009F23F0 /* OAuthConsumer */ = {
@@ -478,6 +496,8 @@
 				E7FDB6D5119FD256009F23F0 /* NSData+Base64.m in Sources */,
 				E7FDB762119FF873009F23F0 /* UdonView.m in Sources */,
 				E7FDB80711A018FE009F23F0 /* SetupViewController.m in Sources */,
+				E7D507B011AA66BB00A91840 /* Reachability.m in Sources */,
+				E7D507B111AA66BB00A91840 /* ReachabilityAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
