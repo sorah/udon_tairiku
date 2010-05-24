@@ -255,8 +255,8 @@
 
 - (void)dealloc {
 	[oa_consumer release];
-	[pin_field dealloc];
-	[done_button dealloc];
+	[pin_field release];
+	[done_button release];
 	[super dealloc];
 }
 

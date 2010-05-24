@@ -191,9 +191,6 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				E7D5079811AA66A500A91840 /* Reachability */,
-				E7FDB687119FD255009F23F0 /* MATwitterEngine */,
-				E7FDB432119FB4A3009F23F0 /* OAuthConsumer */,
 				1D3623240D0F684500981E51 /* udon_tairikuAppDelegate.h */,
 				1D3623250D0F684500981E51 /* udon_tairikuAppDelegate.m */,
 				28D7ACF60DDB3853001CB0EB /* udon_tairikuViewController.h */,
@@ -222,6 +219,7 @@
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
+				E7EA8D1811AA74CB00344C08 /* Others Codes */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 			);
@@ -274,6 +272,17 @@
 				E7D507AF11AA66BB00A91840 /* ReachabilityAppDelegate.m */,
 			);
 			name = Reachability;
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		E7EA8D1811AA74CB00344C08 /* Others Codes */ = {
+			isa = PBXGroup;
+			children = (
+				E7D5079811AA66A500A91840 /* Reachability */,
+				E7FDB687119FD255009F23F0 /* MATwitterEngine */,
+				E7FDB432119FB4A3009F23F0 /* OAuthConsumer */,
+			);
+			name = "Others Codes";
 			sourceTree = "<group>";
 		};
 		E7FDB432119FB4A3009F23F0 /* OAuthConsumer */ = {
@@ -308,6 +317,7 @@
 				E7FDB459119FB4A7009F23F0 /* OAuthConsumer.h */,
 			);
 			name = OAuthConsumer;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		E7FDB433119FB4A3009F23F0 /* Categories */ = {
@@ -352,6 +362,7 @@
 				E7FDB68F119FD255009F23F0 /* MGTwitterParserDelegate.h */,
 			);
 			name = MATwitterEngine;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		E7FDB693119FD255009F23F0 /* Twitter LibXML Parsers */ = {

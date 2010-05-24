@@ -321,24 +321,24 @@
 
 
 - (void)dealloc {
-	[toolbar dealloc];
-	[timeline dealloc];
-	[timeline_switcher dealloc];
-	[show_timeline_button dealloc];
-	[compose_button dealloc];
-	[reload_button dealloc];
-	[toolbar_space dealloc];
-	[twit dealloc];
-	[oa_access_token dealloc];
-	[d dealloc];
+	[toolbar release];
+	[timeline release];
+	[timeline_switcher release];
+	[show_timeline_button release];
+	[compose_button release];
+	[reload_button release];
+	[toolbar_space release];
+	[twit release];
+	[oa_access_token release];
+	[d release];
 	[setup_view release];
-	[done_button dealloc];
-	[bar dealloc];
-	[tv dealloc];
-	[timeline_array dealloc];
-	[post_identifier dealloc];
-	[tl_identifier dealloc];
-	[in_reply_to_status_id dealloc];
+	[done_button release];
+	[bar release];
+	[tv release];
+	[timeline_array release];
+	[post_identifier release];
+	[tl_identifier release];
+	[in_reply_to_status_id release];
     [super dealloc];
 }
 

@@ -72,9 +72,9 @@
 }
 
 - (void)dealloc {
-	[activity_indicator dealloc];
-	[gray_view dealloc];
-	[oaConsumer dealloc];
+	[activity_indicator release];
+	[gray_view release];
+	[oaConsumer release];
     [viewController release];
     [window release];
     [super dealloc];

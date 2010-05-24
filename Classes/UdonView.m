@@ -27,7 +27,7 @@
 */
 
 - (void)dealloc {
-	[tv dealloc];
+	[tv release];
     [super dealloc];
 }
 
