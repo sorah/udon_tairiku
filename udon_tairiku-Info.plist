@@ -11,7 +11,7 @@
 	<key>CFBundleIconFile</key>
 	<string>udon.png</string>
 	<key>CFBundleIdentifier</key>
-	<string>net.soralabo.udon_tairiku</string>
+	<string>net.soralabo.udon-tairiku</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
