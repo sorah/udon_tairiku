@@ -258,18 +258,39 @@
 	}
 	NSDictionary *s = [[timeline_array objectAtIndex:index_path.row] retain];
 	cell.selectionStyle = UITableViewCellSelectionStyleBlue;
-	UILabel *user_label = [[UILabel alloc] initWithFrame:CGRectMake(10, 3, 80, 30)];
-	UILabel *text_label = [[UILabel alloc] initWithFrame:CGRectMake(90, 3, 220, 
-											  [[self class] heightForContents:
-											   [s objectForKey:@"text"]])];	
+	
+	UILabel *user_label, *text_label;
+	switch (UI_USER_INTERFACE_IDIOM()) {
+		case UIUserInterfaceIdiomPhone:
+			user_label = [[UILabel alloc] initWithFrame:CGRectMake(10, 3, 80, 30)];
+			text_label = [[UILabel alloc] initWithFrame:CGRectMake(90, 3, 220, 
+																			[[self class] heightForContents:
+																			 [s objectForKey:@"text"]])];	
+			break;
+		case UIUserInterfaceIdiomPad: //768 is very wide, wide, wide, wide, to me. ('.v.')
+			user_label = [[UILabel alloc] initWithFrame:CGRectMake(10, 3, 150, 30)];
+			text_label = [[UILabel alloc] initWithFrame:CGRectMake(160, 3, 600, 
+																			[[self class] heightForContents:
+																			 [s objectForKey:@"text"]])];	
+			break;
+	}
 	
 	user_label.baselineAdjustment = YES;
 	text_label.numberOfLines = 0;
 	NSDictionary *u = [[s objectForKey:@"user"] retain];
 	user_label.text = [NSString stringWithFormat:@"%@",[u objectForKey:@"screen_name"]];
-	user_label.font = [UIFont boldSystemFontOfSize:11.0];
 	text_label.text = [s objectForKey:@"text"];
-	 text_label.font = [UIFont systemFontOfSize:13.0];
+	
+	switch (UI_USER_INTERFACE_IDIOM()) {
+		case UIUserInterfaceIdiomPhone:
+			user_label.font = [UIFont boldSystemFontOfSize:11.0];
+			text_label.font = [UIFont systemFontOfSize:13.0];
+			break;
+		case UIUserInterfaceIdiomPad:
+			user_label.font = [UIFont boldSystemFontOfSize:13.0];
+			text_label.font = [UIFont systemFontOfSize:15.0];
+			break;
+	}
 	
 	[cell.contentView addSubview:user_label];
 	[cell.contentView addSubview:text_label];

@@ -12,6 +12,8 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		28D7ACF80DDB3853001CB0EB /* udon_tairikuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* udon_tairikuViewController.m */; };
+		E70C1EC011AC7DD9007FAB75 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E70C1EBF11AC7DD9007FAB75 /* MainWindow-iPad.xib */; };
+		E70C21AF11AC80E5007FAB75 /* udon_tairikuViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E70C21AE11AC80E5007FAB75 /* udon_tairikuViewController-iPad.xib */; };
 		E7435BE311A3765800BF719F /* udon.png in Resources */ = {isa = PBXBuildFile; fileRef = E7435BE211A3765800BF719F /* udon.png */; };
 		E7435C0B11A380DC00BF719F /* MGTwitterEngine Licence.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E7435C0911A380DC00BF719F /* MGTwitterEngine Licence.rtf */; };
 		E7435C0C11A380DC00BF719F /* README.mkd in Resources */ = {isa = PBXBuildFile; fileRef = E7435C0A11A380DC00BF719F /* README.mkd */; };
@@ -78,6 +80,8 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* udon_tairiku_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = udon_tairiku_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* udon_tairiku-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "udon_tairiku-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		E70C1EBF11AC7DD9007FAB75 /* MainWindow-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "MainWindow-iPad.xib"; path = "Resources-iPad/MainWindow-iPad.xib"; sourceTree = "<group>"; };
+		E70C21AE11AC80E5007FAB75 /* udon_tairikuViewController-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "udon_tairikuViewController-iPad.xib"; sourceTree = "<group>"; };
 		E7435B8011A368A400BF719F /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		E7435BE211A3765800BF719F /* udon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = udon.png; sourceTree = "<group>"; };
 		E7435C0911A380DC00BF719F /* MGTwitterEngine Licence.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = "MGTwitterEngine Licence.rtf"; sourceTree = "<group>"; };
@@ -219,6 +223,7 @@
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
+				E70C1EBE11AC7DA7007FAB75 /* Resources-iPad */,
 				E7EA8D1811AA74CB00344C08 /* Others Codes */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
@@ -261,6 +266,15 @@
 				E7D5085111AA67AD00A91840 /* SystemConfiguration.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E70C1EBE11AC7DA7007FAB75 /* Resources-iPad */ = {
+			isa = PBXGroup;
+			children = (
+				E70C1EBF11AC7DD9007FAB75 /* MainWindow-iPad.xib */,
+				E70C21AE11AC80E5007FAB75 /* udon_tairikuViewController-iPad.xib */,
+			);
+			name = "Resources-iPad";
 			sourceTree = "<group>";
 		};
 		E7D5079811AA66A500A91840 /* Reachability */ = {
@@ -467,6 +481,8 @@
 				E7435C0C11A380DC00BF719F /* README.mkd in Resources */,
 				E7B64F3711A6117A00550944 /* Settings.bundle in Resources */,
 				E7EA8DB711AA9FD900344C08 /* Default.png in Resources */,
+				E70C1EC011AC7DD9007FAB75 /* MainWindow-iPad.xib in Resources */,
+				E70C21AF11AC80E5007FAB75 /* udon_tairikuViewController-iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,6 +543,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				BUILD_STYLE = Debug;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -535,6 +552,8 @@
 				GCC_PREFIX_HEADER = udon_tairiku_Prefix.pch;
 				INFOPLIST_FILE = "udon_tairiku-Info.plist";
 				PRODUCT_NAME = udon_tairiku;
+				SDKROOT = iphoneos3.1.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -542,12 +561,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				BUILD_STYLE = Release;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = udon_tairiku_Prefix.pch;
 				INFOPLIST_FILE = "udon_tairiku-Info.plist";
 				PRODUCT_NAME = udon_tairiku;
+				SDKROOT = iphoneos3.1.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -567,6 +589,7 @@
 				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos3.1.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -586,6 +609,7 @@
 				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos3.1.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

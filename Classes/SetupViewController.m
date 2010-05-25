@@ -60,8 +60,18 @@
 									   reuseIdentifier:cell_identifier] autorelease];
 		cell.selectionStyle = UITableViewCellSelectionStyleNone;
 		
-		UILabel *label = [[[UILabel alloc] initWithFrame:CGRectMake(10, 6, 100, 30)] autorelease];
-		pin_field = [[[UITextField alloc] initWithFrame:CGRectMake(110, 10, 150, 30)] autorelease];
+		UILabel *label;
+		switch (UI_USER_INTERFACE_IDIOM()) {
+			case UIUserInterfaceIdiomPhone:
+				label = [[[UILabel alloc] initWithFrame:CGRectMake(10, 6, 100, 30)] autorelease];
+				pin_field = [[[UITextField alloc] initWithFrame:CGRectMake(110, 10, 150, 30)] autorelease];
+				break;
+			case UIUserInterfaceIdiomPad:
+				label = [[[UILabel alloc] initWithFrame:CGRectMake(10, 6, 150, 30)] autorelease];
+				label.opaque = YES;
+				pin_field = [[[UITextField alloc] initWithFrame:CGRectMake(160, 10, 200, 30)] autorelease];
+				break;
+		}
 		
 		label.font = [UIFont boldSystemFontOfSize:18];
 		pin_field.delegate = self;
