@@ -8,6 +8,10 @@
 	<string>${PRODUCT_NAME}</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIconFile</key>
+	<string>udon.png</string>
+	<key>CFBundleIconFile~ipad</key>
+	<string>udon-iPad.png</string>
 	<key>CFBundleIconFiles</key>
 	<array>
 		<string>udon.png</string>
