@@ -15,6 +15,7 @@
 		E70C1EC011AC7DD9007FAB75 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E70C1EBF11AC7DD9007FAB75 /* MainWindow-iPad.xib */; };
 		E70C21AF11AC80E5007FAB75 /* udon_tairikuViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E70C21AE11AC80E5007FAB75 /* udon_tairikuViewController-iPad.xib */; };
 		E70C258E11ACB626007FAB75 /* Default-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = E70C258D11ACB625007FAB75 /* Default-iPad.png */; };
+		E70C26AF11ACBB53007FAB75 /* udon-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = E70C26AE11ACBB53007FAB75 /* udon-iPad.png */; };
 		E7435BE311A3765800BF719F /* udon.png in Resources */ = {isa = PBXBuildFile; fileRef = E7435BE211A3765800BF719F /* udon.png */; };
 		E7435C0B11A380DC00BF719F /* MGTwitterEngine Licence.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E7435C0911A380DC00BF719F /* MGTwitterEngine Licence.rtf */; };
 		E7435C0C11A380DC00BF719F /* README.mkd in Resources */ = {isa = PBXBuildFile; fileRef = E7435C0A11A380DC00BF719F /* README.mkd */; };
@@ -80,10 +81,11 @@
 		28D7ACF70DDB3853001CB0EB /* udon_tairikuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = udon_tairikuViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* udon_tairiku_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = udon_tairiku_Prefix.pch; sourceTree = "<group>"; };
-		8D1107310486CEB800E47090 /* udon_tairiku-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "udon_tairiku-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* udon_tairiku-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "udon_tairiku-Info.plist"; plistStructureDefinitionIdentifier = "<none>"; sourceTree = "<group>"; };
 		E70C1EBF11AC7DD9007FAB75 /* MainWindow-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "MainWindow-iPad.xib"; path = "Resources-iPad/MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		E70C21AE11AC80E5007FAB75 /* udon_tairikuViewController-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "udon_tairikuViewController-iPad.xib"; sourceTree = "<group>"; };
 		E70C258D11ACB625007FAB75 /* Default-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-iPad.png"; sourceTree = "<group>"; };
+		E70C26AE11ACBB53007FAB75 /* udon-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "udon-iPad.png"; sourceTree = "<group>"; };
 		E7435B8011A368A400BF719F /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		E7435BE211A3765800BF719F /* udon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = udon.png; sourceTree = "<group>"; };
 		E7435C0911A380DC00BF719F /* MGTwitterEngine Licence.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = "MGTwitterEngine Licence.rtf"; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 		E70C1EBE11AC7DA7007FAB75 /* Resources-iPad */ = {
 			isa = PBXGroup;
 			children = (
+				E70C26AE11ACBB53007FAB75 /* udon-iPad.png */,
 				E70C258D11ACB625007FAB75 /* Default-iPad.png */,
 				E70C1EBF11AC7DD9007FAB75 /* MainWindow-iPad.xib */,
 				E70C21AE11AC80E5007FAB75 /* udon_tairikuViewController-iPad.xib */,
@@ -487,6 +490,7 @@
 				E70C1EC011AC7DD9007FAB75 /* MainWindow-iPad.xib in Resources */,
 				E70C21AF11AC80E5007FAB75 /* udon_tairikuViewController-iPad.xib in Resources */,
 				E70C258E11ACB626007FAB75 /* Default-iPad.png in Resources */,
+				E70C26AF11ACBB53007FAB75 /* udon-iPad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

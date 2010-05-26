@@ -9,7 +9,10 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
-	<string>udon.png</string>
+	<array>
+		<string>udon.png</string>
+		<string>udon-iPad.png</string>
+	</array>
 	<key>UILaunchImageFile</key>
 	<string>Default.png</string>
 	<key>UILaunchImageFile~ipad</key>
