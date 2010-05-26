@@ -9,6 +9,9 @@
 
 #import "OAConsumer.h"
 
+#define IS_IPAD ([[UIDevice currentDevice].model isEqualToString:@"iPad"] \
+					|| [[UIDevice currentDevice].model isEqualToString:@"iPad Simulator"])
+
 @class udon_tairikuViewController;
 
 @interface udon_tairikuAppDelegate : NSObject <UIApplicationDelegate> {

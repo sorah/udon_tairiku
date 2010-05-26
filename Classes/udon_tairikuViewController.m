@@ -53,7 +53,6 @@
 
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
-
 	[toolbar setItems:[NSArray arrayWithObjects:show_timeline_button,nil] animated:NO];
 	
 	if ([[Reachability reachabilityForInternetConnection] currentReachabilityStatus] == NotReachable) {
@@ -77,13 +76,10 @@
 	} else {
 		if (animated) {
 			tv.editable = NO;
-			switch (UI_USER_INTERFACE_IDIOM()) {
-				case UIUserInterfaceIdiomPhone:
-					tv.text = NSLocalizedString(@"how_to_reauthorize",@"");
-					break;
-				case UIUserInterfaceIdiomPad:
-					tv.text = NSLocalizedString(@"how_to_reauthorize_ipad",@"");
-					break;
+			if (IS_IPAD) {
+				tv.text = NSLocalizedString(@"how_to_reauthorize_ipad",@"");
+			} else {
+				tv.text = NSLocalizedString(@"how_to_reauthorize",@"");
 			}
 
 			[NSTimer scheduledTimerWithTimeInterval:2.5
@@ -267,19 +263,17 @@
 	cell.selectionStyle = UITableViewCellSelectionStyleBlue;
 	
 	UILabel *user_label, *text_label;
-	switch (UI_USER_INTERFACE_IDIOM()) {
-		case UIUserInterfaceIdiomPhone:
-			user_label = [[UILabel alloc] initWithFrame:CGRectMake(10, 3, 80, 30)];
-			text_label = [[UILabel alloc] initWithFrame:CGRectMake(90, 3, 220, 
-																			[[self class] heightForContents:
-																			 [s objectForKey:@"text"]])];	
-			break;
-		case UIUserInterfaceIdiomPad: //768 is very wide, wide, wide, wide, to me. ('.v.')
-			user_label = [[UILabel alloc] initWithFrame:CGRectMake(10, 3, 150, 30)];
-			text_label = [[UILabel alloc] initWithFrame:CGRectMake(160, 3, 600, 
-																			[[self class] heightForContents:
-																			 [s objectForKey:@"text"]])];	
-			break;
+	if (IS_IPAD) {
+		user_label = [[UILabel alloc] initWithFrame:CGRectMake(10, 3, 150, 30)];
+		text_label = [[UILabel alloc] initWithFrame:CGRectMake(160, 3, 600, 
+															   [[self class] heightForContents:
+																[s objectForKey:@"text"]])];	
+		
+	} else {
+		user_label = [[UILabel alloc] initWithFrame:CGRectMake(10, 3, 80, 30)];
+		text_label = [[UILabel alloc] initWithFrame:CGRectMake(90, 3, 220, 
+																		[[self class] heightForContents:
+																			[s objectForKey:@"text"]])];	
 	}
 	
 	user_label.baselineAdjustment = YES;
@@ -288,16 +282,16 @@
 	user_label.text = [NSString stringWithFormat:@"%@",[u objectForKey:@"screen_name"]];
 	text_label.text = [s objectForKey:@"text"];
 	
-	switch (UI_USER_INTERFACE_IDIOM()) {
-		case UIUserInterfaceIdiomPhone:
-			user_label.font = [UIFont boldSystemFontOfSize:11.0];
-			text_label.font = [UIFont systemFontOfSize:13.0];
-			break;
-		case UIUserInterfaceIdiomPad:
-			user_label.font = [UIFont boldSystemFontOfSize:13.0];
-			text_label.font = [UIFont systemFontOfSize:15.0];
-			break;
+	if (IS_IPAD) {
+		user_label.font = [UIFont boldSystemFontOfSize:13.0];
+		text_label.font = [UIFont systemFontOfSize:15.0];
+		
+	} else {
+		user_label.font = [UIFont boldSystemFontOfSize:11.0];
+		text_label.font = [UIFont systemFontOfSize:13.0];
 	}
+	
+	
 	
 	[cell.contentView addSubview:user_label];
 	[cell.contentView addSubview:text_label];
