@@ -22,22 +22,7 @@
 	oaConsumer = 
 		[[OAConsumer alloc] initWithKey:@"kYIlJwdlzvTBDKsxvxrhRQ" secret:@"7u4hr2w23JGfFvk9S14mgJojnlPm9jwDQZ4g4Kgepc"];
 
-	// Initialize gray_view -- http://iappdev.blog130.fc2.com/blog-entry-2.html
-	if (([[UIDevice currentDevice].model isEqualToString:@"iPad"] \
-		 || [[UIDevice currentDevice].model isEqualToString:@"iPad Simulator"])) {
-		gray_view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 768, 1024)];
-		activity_indicator = [[UIActivityIndicatorView alloc]
-							    initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-		[activity_indicator setCenter:CGPointMake(384, 512)];
-	} else {
-		gray_view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
-		activity_indicator = [[UIActivityIndicatorView alloc]
-								initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-		[activity_indicator setCenter:CGPointMake(160, 240)];
-	}
-	
-	[gray_view setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8]];
-	[gray_view addSubview:activity_indicator];
+
 	
 	// Set UserDefault
 	NSUserDefaults *d = [[NSUserDefaults standardUserDefaults] retain];
@@ -69,13 +54,37 @@
 	return YES;
 }
 
+-(void) initializeGrayView {
+	// Initialize gray_view -- http://iappdev.blog130.fc2.com/blog-entry-2.html
+	if (gray_view == nil) {
+		if (([[UIDevice currentDevice].model isEqualToString:@"iPad"] \
+			|| [[UIDevice currentDevice].model isEqualToString:@"iPad Simulator"])) {
+			gray_view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 768, 1024)];
+			activity_indicator = [[UIActivityIndicatorView alloc]
+								initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+			[activity_indicator setCenter:CGPointMake(384, 512)];
+		} else {
+			gray_view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
+			activity_indicator = [[UIActivityIndicatorView alloc]
+								initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+			[activity_indicator setCenter:CGPointMake(160, 240)];
+		}
+
+		[gray_view setBackgroundColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8]];
+		[gray_view addSubview:activity_indicator];
+	}
+}
+
+
 -(void) turnOnWorkingView {
+	[self initializeGrayView];
 	window.userInteractionEnabled=NO;
 	[window addSubview:gray_view];
 	[activity_indicator startAnimating];
 }
 
 -(void) turnOffWorkingView {
+	[self initializeGrayView];
 	window.userInteractionEnabled=YES;
 	[activity_indicator stopAnimating];
 	[gray_view removeFromSuperview];

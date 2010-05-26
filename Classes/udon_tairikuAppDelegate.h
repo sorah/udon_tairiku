@@ -29,6 +29,7 @@
 
 -(void) turnOnWorkingView;
 -(void) turnOffWorkingView;
+-(void) initializeGrayView;
 
 @end
 
