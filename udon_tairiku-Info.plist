@@ -10,6 +10,10 @@
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
 	<string>udon.png</string>
+	<key>UILaunchImageFile</key>
+	<string>Default.png</string>
+	<key>UILaunchImageFile~ipad</key>
+	<string>Default-iPad.png</string>
 	<key>CFBundleIdentifier</key>
 	<string>net.soralabo.udon-tairiku</string>
 	<key>CFBundleInfoDictionaryVersion</key>

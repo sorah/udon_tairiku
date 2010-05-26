@@ -77,7 +77,14 @@
 	} else {
 		if (animated) {
 			tv.editable = NO;
-			tv.text = NSLocalizedString(@"how_to_reauthorize",@"");
+			switch (UI_USER_INTERFACE_IDIOM()) {
+				case UIUserInterfaceIdiomPhone:
+					tv.text = NSLocalizedString(@"how_to_reauthorize",@"");
+					break;
+				case UIUserInterfaceIdiomPad:
+					tv.text = NSLocalizedString(@"how_to_reauthorize_ipad",@"");
+					break;
+			}
 
 			[NSTimer scheduledTimerWithTimeInterval:2.5
 											target:self
