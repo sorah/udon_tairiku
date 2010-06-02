@@ -88,6 +88,7 @@
 										   userInfo:nil
 											repeats:NO];
 		} else {
+			show_timeline_button.image = [UIImage imageNamed:@"list.png"];
 			[tv becomeFirstResponder];
 		}
 	}

@@ -12,6 +12,7 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		28D7ACF80DDB3853001CB0EB /* udon_tairikuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* udon_tairikuViewController.m */; };
+		E7048E6211B710E8001ECA36 /* list.png in Resources */ = {isa = PBXBuildFile; fileRef = E7048E6111B710E8001ECA36 /* list.png */; };
 		E70C1EC011AC7DD9007FAB75 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E70C1EBF11AC7DD9007FAB75 /* MainWindow-iPad.xib */; };
 		E70C21AF11AC80E5007FAB75 /* udon_tairikuViewController-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E70C21AE11AC80E5007FAB75 /* udon_tairikuViewController-iPad.xib */; };
 		E70C258E11ACB626007FAB75 /* Default-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = E70C258D11ACB625007FAB75 /* Default-iPad.png */; };
@@ -82,6 +83,7 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* udon_tairiku_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = udon_tairiku_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* udon_tairiku-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "udon_tairiku-Info.plist"; plistStructureDefinitionIdentifier = "<none>"; sourceTree = "<group>"; };
+		E7048E6111B710E8001ECA36 /* list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list.png; sourceTree = "<group>"; };
 		E70C1EBF11AC7DD9007FAB75 /* MainWindow-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "MainWindow-iPad.xib"; path = "Resources-iPad/MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		E70C21AE11AC80E5007FAB75 /* udon_tairikuViewController-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "udon_tairikuViewController-iPad.xib"; sourceTree = "<group>"; };
 		E70C258D11ACB625007FAB75 /* Default-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-iPad.png"; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E7048E6111B710E8001ECA36 /* list.png */,
 				E7B64F2F11A6117A00550944 /* Settings.bundle */,
 				E7435BE211A3765800BF719F /* udon.png */,
 				2899E5210DE3E06400AC0155 /* udon_tairikuViewController.xib */,
@@ -491,6 +494,7 @@
 				E70C21AF11AC80E5007FAB75 /* udon_tairikuViewController-iPad.xib in Resources */,
 				E70C258E11ACB626007FAB75 /* Default-iPad.png in Resources */,
 				E70C26AF11ACBB53007FAB75 /* udon-iPad.png in Resources */,
+				E7048E6211B710E8001ECA36 /* list.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,7 +591,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				BUILD_STYLE = Debug;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
