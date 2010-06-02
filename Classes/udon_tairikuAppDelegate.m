@@ -79,6 +79,7 @@
 -(void) turnOnWorkingView {
 	[self initializeGrayView];
 	window.userInteractionEnabled=NO;
+	[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 	[window addSubview:gray_view];
 	[activity_indicator startAnimating];
 }
@@ -86,6 +87,7 @@
 -(void) turnOffWorkingView {
 	[self initializeGrayView];
 	window.userInteractionEnabled=YES;
+	[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 	[activity_indicator stopAnimating];
 	[gray_view removeFromSuperview];
 }

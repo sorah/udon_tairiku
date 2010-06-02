@@ -229,6 +229,7 @@
 		timeline_array = [statuses retain];
 		tlid++;
 		[timeline reloadData];
+		[UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 		tl_identifier = @"";
 	}
 }
@@ -249,6 +250,7 @@
 			tl_identifier = [[twit getRepliesSinceID:0 startingAtPage:0 count:20] retain];
 			break;
 	}
+	[UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)table_view cellForRowAtIndexPath:(NSIndexPath *)index_path {
