@@ -140,6 +140,7 @@
 		tv.text = @""; // Clear
 		in_reply_to_status_id = @"";
 		bar.title = NSLocalizedString(@"untitled",@""); // Reset title
+		[bar setRightBarButtonItem:nil animated:YES]; // Clear button
 		[((udon_tairikuAppDelegate *)[[UIApplication sharedApplication] delegate]) turnOffWorkingView];
 	}
 }
