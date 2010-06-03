@@ -46,6 +46,11 @@
 - (void)setSegmentedControl;
 - (void)loadSelectedTimeline;
 
+- (void)keyboardWillShow: (NSNotification *)n;
+- (void)keyboardWillHide: (NSNotification *)n;
+- (void)minimizeTableView: (BOOL)animate;
+- (void)resizeTableView: (BOOL)animate;
+
 - (void)textViewDidChange:(UITextView *)textView; // Count text size in TextView
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView;
 

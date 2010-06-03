@@ -119,7 +119,7 @@
 							<object class="IBUISegmentedControl" id="358813324">
 								<reference key="NSNextResponder" ref="191140626"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{89, 7}, {154, 30}}</string>
+								<string key="NSFrame">{{108, 7}, {154, 30}}</string>
 								<reference key="NSSuperview" ref="191140626"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -162,6 +162,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<object class="IBUIBarButtonItem" id="567216380">
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
+								<float key="IBUIWidth">39</float>
 								<int key="IBUIStyle">1</int>
 								<reference key="IBUIToolbar" ref="191140626"/>
 							</object>

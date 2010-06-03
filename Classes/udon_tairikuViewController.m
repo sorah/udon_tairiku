@@ -87,6 +87,37 @@
 
 - (void)viewDidUnload {}
 
+- (void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	
+	if (IS_IPAD) {
+		[[NSNotificationCenter defaultCenter] addObserver:self
+												 selector:@selector(keyboardWillShow:)
+													 name:UIKeyboardWillShowNotification object:nil];
+		[[NSNotificationCenter defaultCenter] addObserver:self
+												 selector:@selector(keyboardWillHide:)
+													 name:UIKeyboardWillHideNotification object:nil];
+	}
+}
+
+// (iPad only) Keyboard & Timeline /////
+
+- (void)keyboardWillShow: (NSNotification *)n {
+}
+
+- (void)keyboardWillHide: (NSNotification *)n {
+}
+
+- (void)minimizeTableView: (BOOL)animate {
+}
+
+- (void)resizeTableView: (BOOL)animate {
+}
+
+- (void)didRotateFromInterfaceOrientation:(int)fromInterfaceOrientation {
+	[super didRotateFromInterfaceOrientation:(int)fromInterfaceOrientation];
+}
+
 // Util /////
 
 - (void)showSetupView {
