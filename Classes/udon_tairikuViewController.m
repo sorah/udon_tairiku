@@ -16,6 +16,8 @@
 
 @synthesize twit;
 
+// Core /////
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
         // Custom initialization
@@ -29,10 +31,71 @@
     return self;
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+	[super viewDidAppear:animated];
+	[toolbar setItems:[NSArray arrayWithObjects:show_timeline_button,nil] animated:NO];
+	
+	if ([[Reachability reachabilityForInternetConnection] currentReachabilityStatus] == NotReachable) {
+		UIAlertView *a = [[UIAlertView alloc] initWithTitle:@"Error"
+													message:@"No internet connection"
+												   delegate:self
+										  cancelButtonTitle:@"OK"
+										  otherButtonTitles:nil];
+		[a show];
+		[a release];
+	}
+	
+	
+	
+	if (d == nil) 	d = [NSUserDefaults standardUserDefaults];
+	if (([[d stringForKey:@"oauth_key"] isEqualToString:@""] ||
+		 [[d stringForKey:@"oauth_secret"] isEqualToString:@""]) &&
+		!setup_done) {
+		setup_done = YES;
+		[self showSetupView];
+	} else {
+		if (animated) {
+			tv.editable = NO;
+			if (IS_IPAD) {
+				tv.text = NSLocalizedString(@"how_to_reauthorize_ipad",@"");
+			} else {
+				tv.text = NSLocalizedString(@"how_to_reauthorize",@"");
+			}
+			
+			[NSTimer scheduledTimerWithTimeInterval:2.5
+											 target:self
+										   selector:@selector(clearHowToAuthorize:)
+										   userInfo:nil
+											repeats:NO];
+		} else {
+			show_timeline_button.image = [UIImage imageNamed:@"list.png"];
+			[tv becomeFirstResponder];
+		}
+	}
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
 	[bar setRightBarButtonItem:nil animated:NO];
+}
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+}
+
+- (void)viewDidUnload {}
+
+// Util /////
+
+- (void)showSetupView {
+	[tv resignFirstResponder]; // Hide a keyboard;
+	
+	if (setup_view == nil) {
+		setup_view = [[SetupViewController alloc] initWithNibName:@"SetupViewController" bundle:nil];
+	}
+	[self presentModalViewController:setup_view animated:YES];
 }
 
 - (void)initializeTwit {
@@ -51,48 +114,6 @@
 	}	
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-	[super viewDidAppear:animated];
-	[toolbar setItems:[NSArray arrayWithObjects:show_timeline_button,nil] animated:NO];
-	
-	if ([[Reachability reachabilityForInternetConnection] currentReachabilityStatus] == NotReachable) {
-		UIAlertView *a = [[UIAlertView alloc] initWithTitle:@"Error"
-													message:@"No internet connection"
-												   delegate:self
-										  cancelButtonTitle:@"OK"
-										  otherButtonTitles:nil];
-		[a show];
-		[a release];
-	}
-	
-
-	
-	if (d == nil) 	d = [NSUserDefaults standardUserDefaults];
-	if (([[d stringForKey:@"oauth_key"] isEqualToString:@""] ||
-		 [[d stringForKey:@"oauth_secret"] isEqualToString:@""]) &&
-		!setup_done) {
-		setup_done = YES;
-		[self showSetupView];
-	} else {
-		if (animated) {
-			tv.editable = NO;
-			if (IS_IPAD) {
-				tv.text = NSLocalizedString(@"how_to_reauthorize_ipad",@"");
-			} else {
-				tv.text = NSLocalizedString(@"how_to_reauthorize",@"");
-			}
-
-			[NSTimer scheduledTimerWithTimeInterval:2.5
-											target:self
-										   selector:@selector(clearHowToAuthorize:)
-										   userInfo:nil
-											repeats:NO];
-		} else {
-			show_timeline_button.image = [UIImage imageNamed:@"list.png"];
-			[tv becomeFirstResponder];
-		}
-	}
-}
 
 - (void)clearHowToAuthorize:(NSTimer *)timer {
 	tv.text = @"";
@@ -100,11 +121,7 @@
 	[tv becomeFirstResponder];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
-
-- (void)viewDidUnload {}
+// Actions /////
 
 - (IBAction)clearButtonIsPushed: (id)sender {
 	if ([tv.text isEqualToString:@""]) {
@@ -135,6 +152,8 @@
 	}
 }
 
+// MGTwitter- Delegates /////
+
 - (void)requestSucceeded:(NSString *)i {
 	if ([i isEqualToString:post_identifier]) {
 		tv.text = @""; // Clear
@@ -158,14 +177,7 @@
 	[a release];
 }
 
-- (void)showSetupView {
-	[tv resignFirstResponder]; // Hide a keyboard;
-	
-	if (setup_view == nil) {
-		setup_view = [[SetupViewController alloc] initWithNibName:@"SetupViewController" bundle:nil];
-	}
-	[self presentModalViewController:setup_view animated:YES];
-}
+// UITextView Delegates /////
 
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView {
 	[toolbar setItems:TOOLBAR_TL_HIDED animated:YES];
@@ -193,6 +205,7 @@
 	}
 }
 
+// Timeline Actions /////
 
 - (IBAction)showTimeline: (id)sender {
 	[self initializeTwit];
@@ -345,6 +358,7 @@
     return result;
 }
 
+// Exit /////
 
 - (void)dealloc {
 	[toolbar release];

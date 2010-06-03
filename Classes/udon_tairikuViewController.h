@@ -2,7 +2,7 @@
 //  udon_tairikuViewController.h
 //  udon_tairiku
 //
-//  Created by Sora Harakami on 2010/5/16.
+//  Created by Sora Harakami on 2010/5/16. 
 //
 
 #import <UIKit/UIKit.h>
