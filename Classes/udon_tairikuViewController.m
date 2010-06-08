@@ -97,25 +97,117 @@
 		[[NSNotificationCenter defaultCenter] addObserver:self
 												 selector:@selector(keyboardWillHide:)
 													 name:UIKeyboardWillHideNotification object:nil];
+		[self minimizeTableView:NO];
+	}
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+	[super viewWillDisappear:animated];
+	if (IS_IPAD) {
+		[[NSNotificationCenter defaultCenter] removeObserver:self
+														name:UIKeyboardWillShowNotification
+													  object:nil];
+		[[NSNotificationCenter defaultCenter] removeObserver:self
+														name:UIKeyboardWillHideNotification
+													  object:nil];
 	}
 }
 
 // (iPad only) Keyboard & Timeline /////
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    return IS_IPAD; // Allow auto rotate if iPad. But don't allow it if not iPad.
+}
+
 - (void)keyboardWillShow: (NSNotification *)n {
+	[self minimizeTableView:YES];
+	[self hideTimeline:nil];
 }
 
 - (void)keyboardWillHide: (NSNotification *)n {
+	[tv resignFirstResponder];
+	[self resizeTableView:YES];
+	[self showTimeline:nil];
 }
 
 - (void)minimizeTableView: (BOOL)animate {
+	if (animate) {
+		CGContextRef context = UIGraphicsGetCurrentContext();
+		[UIView beginAnimations:@"mnimize_table_view_udon_tairiku" context:context];
+		[UIView setAnimationDuration:0.3];
+	}
+	CGRect s = self.view.frame;
+	CGFloat width, height;
+	switch ([UIDevice currentDevice].orientation) {
+		case UIDeviceOrientationLandscapeLeft:
+		case UIDeviceOrientationLandscapeRight:
+			width = s.size.height;
+			height = s.size.width;
+			break;
+		case UIDeviceOrientationPortrait:
+		case UIDeviceOrientationPortraitUpsideDown:
+		case UIDeviceOrientationUnknown:
+		case UIDeviceOrientationFaceUp:
+		case UIDeviceOrientationFaceDown:
+		default:
+			width = s.size.width;
+			height = s.size.height;
+			break;
+
+	}
+	timeline.frame = CGRectMake(0,height, width,0);
+	toolbar.frame = CGRectMake(0,height-46, width,46);
+	tv.frame = CGRectMake(0,46, width,height-46);
+	if (animate) {
+		[UIView commitAnimations];
+	}
+	[tv becomeFirstResponder];
 }
 
 - (void)resizeTableView: (BOOL)animate {
+	// h:44px (toolbar)
+	// if 600
+	if (animate) {
+		CGContextRef context = UIGraphicsGetCurrentContext();
+		[UIView beginAnimations:@"mnimize_table_view_udon_tairiku" context:context];
+		[UIView setAnimationDuration:0.3];
+	}
+	CGRect s = self.view.frame;
+	CGFloat width, height;
+	switch ([UIDevice currentDevice].orientation) {
+		case UIDeviceOrientationLandscapeLeft:
+		case UIDeviceOrientationLandscapeRight:
+			width = s.size.height;
+			height = s.size.width;
+			break;
+		case UIDeviceOrientationPortrait:
+		case UIDeviceOrientationPortraitUpsideDown:
+		case UIDeviceOrientationUnknown:
+		case UIDeviceOrientationFaceUp:
+		case UIDeviceOrientationFaceDown:
+		default:
+			width = s.size.width;
+			height = s.size.height;
+			break;
+			
+	}
+	timeline.hidden = NO;
+	tv.frame = CGRectMake(0,46, width,height-554);
+	toolbar.frame = CGRectMake(0,height-600, width,46);
+	timeline.frame = CGRectMake(0,height-554, width,46+46+554);
+	if (animate) {
+		[UIView commitAnimations];
+	}
 }
 
-- (void)didRotateFromInterfaceOrientation:(int)fromInterfaceOrientation {
-	[super didRotateFromInterfaceOrientation:(int)fromInterfaceOrientation];
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+	[super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
+
+	if([tv isFirstResponder]) {
+		[self minimizeTableView:NO];
+	} else {
+		[self resizeTableView:NO]; // Resize TableView and Move Toolbar
+	}
 }
 
 // Util /////

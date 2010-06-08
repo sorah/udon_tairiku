@@ -12,7 +12,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="17"/>
+			<integer value="2"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -45,7 +45,7 @@
 					<object class="IBUITextView" id="283378924">
 						<reference key="NSNextResponder" ref="126545229"/>
 						<int key="NSvFlags">274</int>
-						<string key="NSFrame">{{0, 44}, {768, 651}}</string>
+						<string key="NSFrame">{{0, 44}, {768, 648}}</string>
 						<reference key="NSSuperview" ref="126545229"/>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">1</int>
@@ -95,7 +95,7 @@
 					<object class="IBUITableView" id="607672829">
 						<reference key="NSNextResponder" ref="126545229"/>
 						<int key="NSvFlags">282</int>
-						<string key="NSFrame">{{-7, 739}, {775, 265}}</string>
+						<string key="NSFrame">{{-9, 737}, {777, 267}}</string>
 						<reference key="NSSuperview" ref="126545229"/>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
@@ -153,7 +153,7 @@
 								</object>
 							</object>
 						</object>
-						<string key="NSFrame">{{0, 695}, {768, 44}}</string>
+						<string key="NSFrame">{{0, 692}, {770, 44}}</string>
 						<reference key="NSSuperview" ref="126545229"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
@@ -242,14 +242,6 @@
 						<reference key="destination" ref="49452192"/>
 					</object>
 					<int key="connectionID">27</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">toolbar</string>
-						<reference key="source" ref="841351856"/>
-						<reference key="destination" ref="191140626"/>
-					</object>
-					<int key="connectionID">28</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
@@ -380,6 +372,14 @@
 					</object>
 					<int key="connectionID">45</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">toolbar</string>
+						<reference key="source" ref="841351856"/>
+						<reference key="destination" ref="191140626"/>
+					</object>
+					<int key="connectionID">67</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -406,17 +406,12 @@
 						<reference key="object" ref="126545229"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="283378924"/>
 							<reference ref="407078249"/>
-							<reference ref="191140626"/>
+							<reference ref="283378924"/>
 							<reference ref="607672829"/>
+							<reference ref="191140626"/>
 						</object>
 						<reference key="parent" ref="0"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">4</int>
-						<reference key="object" ref="607672829"/>
-						<reference key="parent" ref="126545229"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">5</int>
@@ -451,6 +446,11 @@
 						<int key="objectID">9</int>
 						<reference key="object" ref="461460508"/>
 						<reference key="parent" ref="122468200"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">4</int>
+						<reference key="object" ref="607672829"/>
+						<reference key="parent" ref="126545229"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">17</int>
@@ -530,7 +530,7 @@
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>UdonView</string>
-					<string>{{1404, 240}, {783, 1002}}</string>
+					<string>{{1310, 240}, {783, 1002}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -560,7 +560,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">45</int>
+			<int key="maxID">67</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -613,7 +613,6 @@
 							<string>timeline</string>
 							<string>timeline_switcher</string>
 							<string>toolbar</string>
-							<string>toolbar_space</string>
 							<string>tv</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
@@ -626,7 +625,6 @@
 							<string>UITableView</string>
 							<string>UIBarButtonItem</string>
 							<string>UIToolbar</string>
-							<string>UIBarButtonItem</string>
 							<string>UITextView</string>
 						</object>
 					</object>
