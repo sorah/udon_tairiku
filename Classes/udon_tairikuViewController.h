@@ -34,6 +34,8 @@
 	NSString *post_identifier;
 	NSString *tl_identifier;
 	NSString *in_reply_to_status_id;
+	UIDeviceOrientation orientation;
+	BOOL was_tv_firstresponder;
 }
 
 @property (retain, nonatomic) MGTwitterEngine *twit;

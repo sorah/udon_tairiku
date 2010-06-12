@@ -14,4 +14,4 @@
 "post_error_title" = "Error";
 "post_error_msg" = "Failed to request.\nPlease try again later.";
 "how_to_reauthorize" = "↑ Tap to clear.\nReauthorize can by \"Settings.app\"\n\n\n\n\n↓ Show Timeline or Mentions";
-"how_to_reauthorize_ipad" = "↑ Tap to clear.\nReauthorize can by \"Settings.app\"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n↓ Show Timeline or Mentions";
+"how_to_reauthorize_ipad" = "↑ Tap to clear.\nReauthorize can by \"Settings.app\"\n\n\nHide keyboard to show timeline. Tap List Button if you are using Hardware keyboard\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n↓ Show Timeline or Mentions";

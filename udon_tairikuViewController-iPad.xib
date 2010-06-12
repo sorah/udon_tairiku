@@ -45,7 +45,7 @@
 					<object class="IBUITextView" id="283378924">
 						<reference key="NSNextResponder" ref="126545229"/>
 						<int key="NSvFlags">274</int>
-						<string key="NSFrame">{{0, 44}, {768, 648}}</string>
+						<string key="NSFrame">{{0, 44}, {768, 916}}</string>
 						<reference key="NSSuperview" ref="126545229"/>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">1</int>
@@ -153,7 +153,7 @@
 								</object>
 							</object>
 						</object>
-						<string key="NSFrame">{{0, 692}, {770, 44}}</string>
+						<string key="NSFrame">{{0, 960}, {770, 44}}</string>
 						<reference key="NSSuperview" ref="126545229"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClearsContextBeforeDrawing">NO</bool>
@@ -613,6 +613,7 @@
 							<string>timeline</string>
 							<string>timeline_switcher</string>
 							<string>toolbar</string>
+							<string>toolbar_space</string>
 							<string>tv</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
@@ -625,6 +626,7 @@
 							<string>UITableView</string>
 							<string>UIBarButtonItem</string>
 							<string>UIToolbar</string>
+							<string>UIBarButtonItem</string>
 							<string>UITextView</string>
 						</object>
 					</object>

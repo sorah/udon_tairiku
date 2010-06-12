@@ -27,6 +27,7 @@
 		tl_identifier = @"";
 		timeline_array = [NSArray array];
 		in_reply_to_status_id = @"";
+		was_tv_firstresponder = YES;
     }
     return self;
 }
@@ -34,6 +35,7 @@
 - (void)viewDidAppear:(BOOL)animated {
 	[super viewDidAppear:animated];
 	[toolbar setItems:[NSArray arrayWithObjects:show_timeline_button,nil] animated:NO];
+
 	
 	if ([[Reachability reachabilityForInternetConnection] currentReachabilityStatus] == NotReachable) {
 		UIAlertView *a = [[UIAlertView alloc] initWithTitle:@"Error"
@@ -76,8 +78,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
 	[bar setRightBarButtonItem:nil animated:NO];
+	timeline.hidden = YES;
 }
 
 
@@ -97,7 +99,7 @@
 		[[NSNotificationCenter defaultCenter] addObserver:self
 												 selector:@selector(keyboardWillHide:)
 													 name:UIKeyboardWillHideNotification object:nil];
-		[self minimizeTableView:NO];
+//		[self minimizeTableView:NO];
 	}
 }
 
@@ -131,30 +133,45 @@
 }
 
 - (void)minimizeTableView: (BOOL)animate {
-	if (animate) {
-		CGContextRef context = UIGraphicsGetCurrentContext();
-		[UIView beginAnimations:@"mnimize_table_view_udon_tairiku" context:context];
-		[UIView setAnimationDuration:0.3];
-	}
+	NSLog(@"minimizeTableView");
 	CGRect s = self.view.frame;
-	CGFloat width, height;
-	switch ([UIDevice currentDevice].orientation) {
+	CGFloat width, height; 
+	switch (orientation) {
 		case UIDeviceOrientationLandscapeLeft:
 		case UIDeviceOrientationLandscapeRight:
+			NSLog(@"landscape");
 			width = s.size.height;
 			height = s.size.width;
 			break;
 		case UIDeviceOrientationPortrait:
 		case UIDeviceOrientationPortraitUpsideDown:
-		case UIDeviceOrientationUnknown:
 		case UIDeviceOrientationFaceUp:
 		case UIDeviceOrientationFaceDown:
-		default:
+			NSLog(@"portlait");
 			width = s.size.width;
 			height = s.size.height;
 			break;
+		default:
+			NSLog(@"default");
+			/*if (s.size.width == 1004) {
+				width = s.size.width;
+				height = s.size.height;
+			} else {
+				width = s.size.height;
+				height = s.size.width;
+			}*/
+			timeline.hidden = YES; 
+			return;
+			break;
+	} 
 
+	
+	if (animate) {
+		CGContextRef context = UIGraphicsGetCurrentContext();
+		[UIView beginAnimations:@"minimize_table_view_udon_tairiku" context:context];
+		[UIView setAnimationDuration:0.3];
 	}
+
 	timeline.frame = CGRectMake(0,height, width,0);
 	toolbar.frame = CGRectMake(0,height-46, width,46);
 	tv.frame = CGRectMake(0,46, width,height-46);
@@ -165,31 +182,35 @@
 }
 
 - (void)resizeTableView: (BOOL)animate {
+	NSLog(@"resizeTableView");
 	// h:44px (toolbar)
 	// if 600
-	if (animate) {
-		CGContextRef context = UIGraphicsGetCurrentContext();
-		[UIView beginAnimations:@"mnimize_table_view_udon_tairiku" context:context];
-		[UIView setAnimationDuration:0.3];
-	}
 	CGRect s = self.view.frame;
-	CGFloat width, height;
-	switch ([UIDevice currentDevice].orientation) {
+	CGFloat width, height; 
+	switch (orientation) {
 		case UIDeviceOrientationLandscapeLeft:
 		case UIDeviceOrientationLandscapeRight:
+			NSLog(@"landscape");
 			width = s.size.height;
 			height = s.size.width;
 			break;
 		case UIDeviceOrientationPortrait:
 		case UIDeviceOrientationPortraitUpsideDown:
-		case UIDeviceOrientationUnknown:
 		case UIDeviceOrientationFaceUp:
 		case UIDeviceOrientationFaceDown:
-		default:
+			NSLog(@"portlait");
 			width = s.size.width;
 			height = s.size.height;
 			break;
-			
+		default:
+			return;
+			break;
+	}
+	
+	if (animate) {
+		CGContextRef context = UIGraphicsGetCurrentContext();
+		[UIView beginAnimations:@"resize_table_view_udon_tairiku" context:context];
+		[UIView setAnimationDuration:0.3];
 	}
 	timeline.hidden = NO;
 	tv.frame = CGRectMake(0,46, width,height-554);
@@ -200,13 +221,21 @@
 	}
 }
 
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+	[super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
+	
+	orientation = toInterfaceOrientation;
+	was_tv_firstresponder = [tv isFirstResponder];
+	
+}
+
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
 	[super didRotateFromInterfaceOrientation:fromInterfaceOrientation];
 
-	if([tv isFirstResponder]) {
+	if(was_tv_firstresponder) {
 		[self minimizeTableView:NO];
 	} else {
-		[self resizeTableView:NO]; // Resize TableView and Move Toolbar
+		[self resizeTableView:NO];
 	}
 }
 
@@ -304,6 +333,9 @@
 
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView {
 	[toolbar setItems:TOOLBAR_TL_HIDED animated:YES];
+//	if (IS_IPAD) {
+//		[self minimizeTableView:YES];
+//	}
 	return YES;
 }
 
@@ -334,12 +366,18 @@
 	[self initializeTwit];
 	[self setSegmentedControl];
 	[self loadSelectedTimeline];
+	if (IS_IPAD) {
+		[self resizeTableView:YES];
+	}
 	[toolbar setItems:TOOLBAR_TL animated:YES];
 	[tv resignFirstResponder];
 }
 
 - (IBAction)hideTimeline: (id)sender {
 	[toolbar setItems:TOOLBAR_TL_HIDED animated:YES];
+	if (IS_IPAD) {
+		[self minimizeTableView:YES];
+	}
 	[tv	becomeFirstResponder];
 }
 
