@@ -79,6 +79,7 @@
 		
 		[cell.contentView addSubview:label];
 		[cell.contentView addSubview:pin_field];
+		[pin_field becomeFirstResponder];
 	}
 	
 	return cell;

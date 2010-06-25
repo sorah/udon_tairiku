@@ -40,7 +40,7 @@
 
 @property (retain, nonatomic) MGTwitterEngine *twit;
 
-+ (CGFloat)heightForContents:(NSString *)contents;
+- (CGFloat)heightForContents:(NSString *)contents;
 
 - (void)initializeTwit; // Initialize MGTwitterEngine *twit
 - (void)showSetupView; // show authorize dialog

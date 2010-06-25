@@ -79,7 +79,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	[bar setRightBarButtonItem:nil animated:NO];
-	timeline.hidden = YES;
+	if (IS_IPAD) {
+		timeline.hidden = YES;
+	}
 }
 
 
@@ -124,6 +126,9 @@
 - (void)keyboardWillShow: (NSNotification *)n {
 	[self minimizeTableView:YES];
 	[self hideTimeline:nil];
+	if (!orientation) {
+		orientation = [UIDevice currentDevice].orientation;
+	}
 }
 
 - (void)keyboardWillHide: (NSNotification *)n {
@@ -203,7 +208,8 @@
 			height = s.size.height;
 			break;
 		default:
-			return;
+			width = s.size.width;
+			height = s.size.height;
 			break;
 	}
 	
@@ -270,6 +276,7 @@
 - (void)clearHowToAuthorize:(NSTimer *)timer {
 	tv.text = @"";
 	tv.editable = YES;
+	show_timeline_button.image = [UIImage imageNamed:@"list.png"];
 	[tv becomeFirstResponder];
 }
 
@@ -444,13 +451,13 @@
 	if (IS_IPAD) {
 		user_label = [[UILabel alloc] initWithFrame:CGRectMake(10, 3, 150, 30)];
 		text_label = [[UILabel alloc] initWithFrame:CGRectMake(160, 3, 600, 
-															   [[self class] heightForContents:
+															   [self heightForContents:
 																[s objectForKey:@"text"]])];	
 		
 	} else {
 		user_label = [[UILabel alloc] initWithFrame:CGRectMake(10, 3, 80, 30)];
 		text_label = [[UILabel alloc] initWithFrame:CGRectMake(90, 3, 220, 
-																		[[self class] heightForContents:
+																		[self heightForContents:
 																			[s objectForKey:@"text"]])];	
 	}
 	
@@ -491,7 +498,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)table_view heightForRowAtIndexPath:(NSIndexPath *)index_path {
-	return [[self class] heightForContents:
+	return [self heightForContents:
 			[[timeline_array objectAtIndex:index_path.row] objectForKey:@"text"]];
 }
 
@@ -504,14 +511,36 @@
 	[tv becomeFirstResponder];
 }
 
-+ (CGFloat)heightForContents:(NSString *)contents {
+- (CGFloat)heightForContents:(NSString *)contents {
 	// http://tech.actindi.net/3477191382
     CGFloat result;
     CGSize  labelSize;
 	
+	CGRect s = self.view.frame;
+	CGFloat width;
+	if (IS_IPAD) {
+		switch (orientation) {
+			case UIDeviceOrientationLandscapeLeft:
+			case UIDeviceOrientationLandscapeRight:
+				width = s.size.height-20;
+				break;
+			case UIDeviceOrientationPortrait:
+			case UIDeviceOrientationPortraitUpsideDown:
+			case UIDeviceOrientationFaceUp:
+			case UIDeviceOrientationFaceDown:
+				width = s.size.width-20;
+				break;
+			default:
+				width = 220;
+				break;
+		}
+	} else {
+		width = 220;
+	}
+	
     result = 0.0;
     labelSize = [contents sizeWithFont:[UIFont systemFontOfSize:13.0]
-                     constrainedToSize:CGSizeMake(220, 10000)
+                     constrainedToSize:CGSizeMake(width, 10000)
                          lineBreakMode:UILineBreakModeWordWrap];
     result += labelSize.height;
 	result += 12;
